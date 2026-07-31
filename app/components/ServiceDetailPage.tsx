@@ -26,9 +26,10 @@ export function ServiceDetailPage({ service }: { service: ServiceDetail }) {
         <div className="service-badges">{service.badges.map((badge) => <span key={badge}>{badge}</span>)}</div>
         <div className="service-detail-actions"><a className="button" href="/contact">ปรึกษาโปรแกรม <span>↗</span></a><a className="text-link" href="#details">ดูรายละเอียด <span>↓</span></a></div>
       </div>
-      <div className="service-detail-hero-visual">
-        <img className="service-detail-cover" src={service.heroImage} alt="" />
-        <div className="machine-card"><img src={service.machineImage} alt={service.machineAlt} />{service.imageSource && <a href={service.imageSource.url} target="_blank" rel="noreferrer">{service.imageSource.label} <span>↗</span></a>}</div>
+      <div className={`service-detail-hero-visual${service.imageSource ? " machine-hero-visual" : ""}`}>
+        {service.imageSource
+          ? <div className="machine-hero-stage"><img className="machine-hero-image" src={service.machineImage} alt={service.machineAlt} /></div>
+          : <img className="service-detail-cover" src={service.heroImage} alt="" />}
       </div>
     </section>
 
@@ -75,4 +76,3 @@ export function ServiceDetailPage({ service }: { service: ServiceDetail }) {
     <SiteFooter />
   </main>;
 }
-

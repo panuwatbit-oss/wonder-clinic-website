@@ -76,6 +76,7 @@ test("server-renders every detailed service page with FAQ and booking actions", 
     assert.match(html, /FAQPage/, path);
     assert.match(html, /Messenger/, path);
     assert.match(html, /ผลลัพธ์แตกต่างกัน/, path);
+    assert.doesNotMatch(html, /ภาพผลิตภัณฑ์จาก/, path);
   }
 });
 
