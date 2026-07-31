@@ -63,9 +63,7 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-art" aria-label="บริการหลักของ The Wonder Clinic">
-          <div className="orb orb-one" />
-          <div className="orb orb-two" />
-          <div className="hero-ring" />
+          <img className="hero-photo" src="/media/samples/hero-beauty-sample.png" alt="ภาพตัวอย่างแนวทาง Hero ของ The Wonder Clinic" />
           <div className="hero-statement">
             <span>TECHNOLOGY</span>
             <strong>MEETS<br />CARE</strong>
@@ -106,16 +104,22 @@ export default function Home() {
 
       <section className="feature section">
         <div className="feature-pico">
-          <p className="eyebrow">DISCOVERY PICO</p>
-          <h2>เลเซอร์เพื่อการ<br /><em>ดูแลผิวอย่างละเอียด</em></h2>
-          <p>สำหรับผิวหน้า ฝ้า รอยดำ และรอยแตกลาย พร้อมคำแนะนำการดูแลก่อนและหลังทำ</p>
-          <a className="button button-dark" href="#booking">สอบถาม Discovery Pico <span>↗</span></a>
+          <img className="feature-image" src="/media/samples/discovery-pico-sample.png" alt="ภาพตัวอย่าง Discovery Pico" />
+          <div className="feature-copy">
+            <p className="eyebrow">DISCOVERY PICO</p>
+            <h2>เลเซอร์เพื่อการ<br /><em>ดูแลผิวอย่างละเอียด</em></h2>
+            <p>สำหรับผิวหน้า ฝ้า รอยดำ และรอยแตกลาย พร้อมคำแนะนำการดูแลก่อนและหลังทำ</p>
+            <a className="button button-dark" href="#booking">สอบถาม Discovery Pico <span>↗</span></a>
+          </div>
         </div>
         <div className="feature-yag">
-          <p className="eyebrow">YAG HAIR REMOVAL</p>
-          <div className="laser-line" />
-          <h2>ผิวเรียบลื่น<br />ในแบบที่คุณเลือก</h2>
-          <p>เลือกดูแลได้หลายบริเวณ ตั้งแต่ใบหน้าไปจนถึง Brazilian</p>
+          <img className="feature-image" src="/media/samples/yag-hair-removal-sample.png" alt="ภาพตัวอย่าง YAG กำจัดขน" />
+          <div className="feature-copy">
+            <p className="eyebrow">YAG HAIR REMOVAL</p>
+            <div className="laser-line" />
+            <h2>ผิวเรียบลื่น<br />ในแบบที่คุณเลือก</h2>
+            <p>เลือกดูแลได้หลายบริเวณ ตั้งแต่ใบหน้าไปจนถึง Brazilian</p>
+          </div>
         </div>
       </section>
 
