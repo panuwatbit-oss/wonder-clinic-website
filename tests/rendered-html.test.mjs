@@ -58,6 +58,32 @@ test("uses a dedicated generated WebP hero image on every primary page", async (
   }
 });
 
+test("server-renders every detailed service page with FAQ and booking actions", async () => {
+  const routes = [
+    ["/services/discovery-pico", "Discovery PICO"],
+    ["/services/yag-hair-removal", "Quanta Light EVO"],
+    ["/services/oligio", "Oligio"],
+    ["/services/ultraformer-iii", "Ultraformer III"],
+    ["/services/ultherapy", "Ultherapy"],
+    ["/services/injectables", "โปรแกรมฉีดโดยแพทย์"],
+  ];
+
+  for (const [path, content] of routes) {
+    const response = await render(path);
+    assert.equal(response.status, 200, path);
+    const html = await response.text();
+    assert.match(html, new RegExp(content), path);
+    assert.match(html, /FAQPage/, path);
+    assert.match(html, /Messenger/, path);
+    assert.match(html, /ผลลัพธ์แตกต่างกัน/, path);
+  }
+});
+
+test("keeps official manufacturer WebP equipment imagery available", async () => {
+  const equipment = ["discovery-pico", "cryo-6", "quanta-light-evo", "oligio", "ultraformer-iii", "ultherapy"];
+  await Promise.all(equipment.map((name) => access(new URL(`../public/media/equipment/${name}-official.webp`, import.meta.url))));
+});
+
 test("keeps the complete review library and responsive gallery wired into the site", async () => {
   const [page, gallery, reviewData, css, layout, navigation] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
@@ -70,7 +96,7 @@ test("keeps the complete review library and responsive gallery wired into the si
 
   assert.match(page, /reviewGalleryItems/);
   assert.match(page, /HeroPhrases/);
-  assert.match(page, /สอบถาม YAG Hair Removal/);
+  assert.match(page, /รู้จัก YAG Hair Removal/);
   assert.match(page, /ผลลัพธ์ขึ้นอยู่กับสภาพผิว/);
   assert.match(page, /เปิดเส้นทางใน Google Maps/);
   assert.match(page, /loading="lazy"/);

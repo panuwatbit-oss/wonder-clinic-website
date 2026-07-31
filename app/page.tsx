@@ -12,14 +12,16 @@ const services = [
     description: "Picosecond Laser จาก Quanta System ประเทศอิตาลี สำหรับวางแผนดูแลสีผิวและผิวไม่เรียบเนียน",
     tag: "PICO LASER",
     image: "/media/services/discovery-pico-cover.webp",
+    href: "/services/discovery-pico",
   },
   {
     number: "02",
-    title: "YAG กำจัดขน",
+    title: "Quanta Light EVO",
     en: "Smooth skin, made simple",
-    description: "Long-pulsed Nd:YAG จาก Quanta System ทำงานร่วมกับระบบลมเย็น Cryo 6",
+    description: "Long-pulsed Nd:YAG 1064 nm จาก Quanta System ทำงานร่วมกับระบบลมเย็น Cryo 6",
     tag: "YAG HAIR REMOVAL",
     image: "/media/services/yag-hair-removal-cover.webp",
+    href: "/services/yag-hair-removal",
   },
   {
     number: "03",
@@ -28,6 +30,7 @@ const services = [
     description: "รวม Oligio, Ultraformer III และ Ultherapy เพื่อเลือกพลังงานให้เหมาะกับแต่ละปัญหา",
     tag: "FACIAL CONTOURING",
     image: "/media/services/facial-contour-cover.webp",
+    href: "/services/oligio",
   },
   {
     number: "04",
@@ -36,6 +39,7 @@ const services = [
     description: "Botox, Filler, Skin Booster และ Biostimulator พร้อมการประเมินโดยแพทย์",
     tag: "DOCTOR-LED INJECTABLES",
     image: "/media/services/injectable-cover.webp",
+    href: "/services/injectables",
   },
 ];
 
@@ -95,7 +99,7 @@ export default function Home() {
               <div className="service-top"><span>{service.number}</span><span>{service.tag}</span></div>
               <img className="service-cover" src={service.image} alt={`ภาพตัวอย่าง ${service.title}`} />
               <div className="service-copy"><h3>{service.title}</h3><p className="service-en">{service.en}</p><p>{service.description}</p></div>
-              <a href="#booking" aria-label={`สอบถาม ${service.title}`}>สอบถามโปรแกรม <span>↗</span></a>
+              <a href={service.href} aria-label={`อ่านรายละเอียด ${service.title}`}>อ่านรายละเอียด <span>↗</span></a>
             </article>
           ))}
         </div>
@@ -108,7 +112,7 @@ export default function Home() {
             <p className="eyebrow">DISCOVERY PICO</p>
             <h2>เลเซอร์เพื่อการ<br /><em>ดูแลผิวอย่างละเอียด</em></h2>
             <p>Picosecond Laser จาก Quanta System ประเทศอิตาลี แพลตฟอร์มพลังงานสูงที่มีหัวและโหมดสำหรับวางแผนดูแลปัญหาผิวแตกต่างกัน</p>
-            <a className="button button-dark" href="#booking">สอบถาม Discovery Pico <span>↗</span></a>
+            <a className="button button-dark" href="/services/discovery-pico">รู้จัก Discovery PICO <span>↗</span></a>
           </div>
         </div>
         <div className="feature-yag" id="yag-hair-removal">
@@ -118,7 +122,7 @@ export default function Home() {
             <div className="laser-line" />
             <h2>ผิวเรียบลื่น<br />ในแบบที่คุณเลือก</h2>
             <p>Long-pulsed Nd:YAG จาก Quanta System พร้อมเครื่องเป่าลมเย็น Cryo 6 จาก Zimmer เพื่อช่วยเพิ่มความสบายระหว่างทำ</p>
-            <a className="button button-dark" href="#booking">สอบถาม YAG Hair Removal <span>↗</span></a>
+            <a className="button button-dark" href="/services/yag-hair-removal">รู้จัก YAG Hair Removal <span>↗</span></a>
           </div>
         </div>
       </section>
