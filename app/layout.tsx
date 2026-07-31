@@ -14,8 +14,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host");
   const protocol = requestHeaders.get("x-forwarded-proto") ?? "https";
   const metadataBase = host ? new URL(`${protocol}://${host}`) : undefined;
-  const title = "The Wonder Clinic | เครื่องมือมาตรฐานสากล ดูแลโดยแพทย์";
-  const description = "เข้าถึงเครื่องมือมูลค่าสูงจากผู้ผลิตระดับโลก หลายเทคโนโลยีได้รับมาตรฐาน US FDA ตามรุ่นและข้อบ่งใช้ พร้อมแผนการดูแลเฉพาะบุคคล";
+  const title = "The Wonder Clinic | เทคโนโลยีมาตรฐานสากล ดูแลโดยแพทย์";
+  const description = "เทคโนโลยีทางการแพทย์จากผู้ผลิตชั้นนำ พร้อมข้อมูลชื่อรุ่น แหล่งที่มา และมาตรฐานที่ตรวจสอบได้ โดยแพทย์ประเมินและวางแผนการดูแลเป็นรายบุคคล";
 
   return {
     metadataBase,

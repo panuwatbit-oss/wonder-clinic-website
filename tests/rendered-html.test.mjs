@@ -20,11 +20,11 @@ test("server-renders the Wonder Clinic review experience", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>The Wonder Clinic \| เครื่องมือมาตรฐานสากล ดูแลโดยแพทย์<\/title>/i);
+  assert.match(html, /<title>The Wonder Clinic \| เทคโนโลยีมาตรฐานสากล ดูแลโดยแพทย์<\/title>/i);
   assert.match(html, /REAL REVIEW LIBRARY/);
   assert.match(html, /รวมรีวิวจริง/);
   assert.match(html, /Discovery Pico/);
-  assert.match(html, /เครื่องมือระดับโลก/);
+  assert.match(html, /เทคโนโลยีชั้นนำ/);
   assert.match(html, /แผนที่ The Wonder Clinic สาขาลาดพร้าว/);
   assert.match(html, /maps\.google\.com\/maps/);
   assert.doesNotMatch(html, /RESULTS &amp; REVIEWS/);
@@ -33,7 +33,7 @@ test("server-renders the Wonder Clinic review experience", async () => {
 
 test("server-renders every primary sitemap page", async () => {
   const routes = [
-    ["/services", "เครื่องมือมูลค่าสูง"],
+    ["/services", "เทคโนโลยีมาตรฐานสากล"],
     ["/promotions", "โปรโมชั่นประจำเดือน"],
     ["/reviews", "ประสบการณ์จริง"],
     ["/articles", "WONDER JOURNAL"],

@@ -32,7 +32,7 @@ export const siteNavigation: NavigationItem[] = [
         ],
       },
       {
-        label: "ปรับรูปหน้าด้วย World-Class Laser",
+        label: "ยกกระชับและปรับรูปหน้าด้วยเทคโนโลยี",
         href: "/services#facial-contouring",
         children: [
           { label: "Oligio", href: "/services/oligio" },

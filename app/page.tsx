@@ -78,13 +78,13 @@ export default function Home() {
       <section className="intro section" id="about">
         <p className="eyebrow">WHY WONDER</p>
         <div className="intro-grid">
-          <h2>ความมั่นใจ เริ่มจาก<br /><em>เครื่องมือที่ไว้ใจได้</em></h2>
-          <p>Wonder Clinic เลือกลงทุนกับเครื่องมือมูลค่าสูงจากผู้ผลิตเทคโนโลยีทางการแพทย์ชั้นนำ เพื่อให้ผู้รับบริการเข้าถึงการดูแลด้วยมาตรฐานสากลในราคาที่สมเหตุสมผล</p>
+          <h2>ความมั่นใจ เริ่มจาก<br /><em>เทคโนโลยีที่ได้มาตรฐาน</em></h2>
+          <p>Wonder Clinic คัดสรรเทคโนโลยีทางการแพทย์จากผู้ผลิตชั้นนำ โดยให้ความสำคัญกับเครื่องแท้ แหล่งที่มา และมาตรฐานของแต่ละรุ่น เพื่อให้แพทย์เลือกแนวทางที่เหมาะกับแต่ละบุคคล</p>
         </div>
         <div className="value-grid">
-          <article><b>01</b><h3>World-Class Technology</h3><p>เครื่องมือจาก Quanta System, WONTECH, CLASSYS, Merz Aesthetics และ Zimmer</p></article>
+          <article><b>01</b><h3>เทคโนโลยีจากผู้ผลิตชั้นนำ</h3><p>คัดสรรจาก Quanta System, WONTECH, CLASSYS, Merz Aesthetics และ Zimmer</p></article>
           <article><b>02</b><h3>มาตรฐานที่ตรวจสอบได้</h3><p>หลายเครื่องได้รับมาตรฐาน US FDA ตามรุ่นและข้อบ่งใช้ พร้อมข้อมูลแหล่งที่มาชัดเจน</p></article>
-          <article><b>03</b><h3>ลงทุนเพื่อคุณภาพ</h3><p>เลือกเครื่องมือมูลค่าสูงและให้แพทย์วางแผนการดูแลอย่างเหมาะสมเป็นรายบุคคล</p></article>
+          <article><b>03</b><h3>เลือกให้เหมาะกับแต่ละบุคคล</h3><p>แพทย์ประเมินปัญหา สภาพผิว และเป้าหมายก่อนวางแผนการดูแล</p></article>
         </div>
       </section>
 
@@ -159,8 +159,8 @@ export default function Home() {
       </section>
 
       <section className="standards section" id="standards">
-        <div><p className="eyebrow">GLOBAL STANDARD TECHNOLOGY</p><h2>ลงทุนกับเครื่องมือ<br /><em>เพื่อความมั่นใจของคุณ</em></h2></div>
-        <div className="standards-copy"><p>Wonder Clinic คัดสรรเครื่องมือจากผู้ผลิตชั้นนำระดับโลก หลายเทคโนโลยีได้รับมาตรฐาน US FDA ตามรุ่นและข้อบ่งใช้ พร้อมให้ตรวจสอบชื่อเครื่อง แหล่งที่มา และ Certificate ก่อนตัดสินใจ</p><a className="text-link" href="/about">ดูมาตรฐานของเรา <span>↗</span></a></div>
+        <div><p className="eyebrow">GLOBAL STANDARD TECHNOLOGY</p><h2>เทคโนโลยีที่ได้มาตรฐาน<br /><em>เพื่อความมั่นใจของคุณ</em></h2></div>
+        <div className="standards-copy"><p>Wonder Clinic คัดสรรเทคโนโลยีจากผู้ผลิตชั้นนำ หลายรุ่นได้รับมาตรฐาน US FDA ตามข้อบ่งใช้ พร้อมให้ตรวจสอบชื่อรุ่น แหล่งที่มา และเอกสารรับรองก่อนตัดสินใจ</p><a className="text-link" href="/about">ดูมาตรฐานของเรา <span>↗</span></a></div>
         <div className="technology-proof" aria-label="เทคโนโลยีหลักของ The Wonder Clinic">
           <article><span>ITALY</span><strong>QUANTA SYSTEM</strong><p>Discovery PICO · Long-pulsed Nd:YAG</p></article>
           <article><span>KOREA</span><strong>WONTECH · CLASSYS</strong><p>Oligio · Ultraformer III</p></article>

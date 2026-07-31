@@ -28,18 +28,26 @@ export type ServiceDetail = {
 
 const standardCaution = "ข้อมูลนี้เป็นข้อมูลทั่วไป ไม่ใช่การวินิจฉัยหรือรับประกันผลลัพธ์ แพทย์ต้องประเมินสภาพผิว ประวัติสุขภาพ และความเหมาะสมก่อนรับบริการทุกครั้ง";
 
-function pickReviews(...titles: string[]) {
-  const titleOffsets = new Map<string, number>();
-  const selected: { src: string; alt: string }[] = [];
+function collectReviews(group: string, limit = 12, titles?: string[]) {
+  const matching = reviewGalleryItems.filter((review) => review.group === group && (!titles || titles.includes(review.title)));
+  const buckets = new Map<string, typeof matching>();
 
-  for (const title of titles) {
-    const offset = titleOffsets.get(title) ?? 0;
-    const item = reviewGalleryItems.filter((review) => review.title === title)[offset];
-    titleOffsets.set(title, offset + 1);
-    if (item) selected.push({ src: item.src, alt: item.alt });
+  for (const review of matching) {
+    const bucket = buckets.get(review.title) ?? [];
+    bucket.push(review);
+    buckets.set(review.title, bucket);
   }
 
-  return selected;
+  const selected: typeof matching = [];
+  while (selected.length < limit && [...buckets.values()].some((bucket) => bucket.length)) {
+    for (const bucket of buckets.values()) {
+      const review = bucket.shift();
+      if (review) selected.push(review);
+      if (selected.length === limit) break;
+    }
+  }
+
+  return selected.map(({ src, alt }) => ({ src, alt }));
 }
 
 export const serviceDetails: Record<string, ServiceDetail> = {
@@ -79,7 +87,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       { question: "ใช้รักษาฝ้าได้ทุกชนิดหรือไม่?", answer: "ฝ้ามีหลายชนิดและมีโอกาสกลับมาเป็นซ้ำ เลเซอร์ไม่ใช่คำตอบเดียวสำหรับทุกคน แพทย์ต้องประเมินร่วมกับพฤติกรรม แสงแดด และการดูแลผิวอื่น ๆ" },
       { question: "เครื่องของคลินิกมี 694 nm หรือไม่?", answer: "694 nm มีเฉพาะ Discovery PICO บางรุ่น จึงควรตรวจสอบป้ายรุ่นและ Certificate ของเครื่องในสาขาก่อนยืนยัน" },
     ],
-    reviews: pickReviews("Discovery Pico", "Pico ฝ้า กระ", "Pico รอยดำ รอยสิว"),
+    reviews: collectReviews("pico", 12),
     caution: standardCaution,
   },
   "yag-hair-removal": {
@@ -118,7 +126,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       { question: "ทำไมต้องทำหลายครั้ง?", answer: "เลเซอร์ตอบสนองได้ดีกับเส้นขนในระยะเจริญเติบโต แต่เส้นขนในบริเวณเดียวกันไม่ได้อยู่ในระยะเดียวกันทั้งหมด จึงต้องวางรอบการทำต่อเนื่อง" },
       { question: "Cryo 6 เป็นเลเซอร์อีกเครื่องหรือไม่?", answer: "ไม่ใช่ Cryo 6 เป็นเครื่องส่งลมเย็นสำหรับช่วยลดอุณหภูมิผิวและเพิ่มความสบาย ใช้ร่วมกับเลเซอร์กำจัดขน" },
     ],
-    reviews: pickReviews("เลเซอร์ขนรักแร้", "เลเซอร์ขนหนวดเครา", "เลเซอร์ขนขา"),
+    reviews: collectReviews("hair-removal", 12),
     caution: standardCaution,
   },
   oligio: {
@@ -157,7 +165,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       { question: "จำนวน shots มากกว่าดีกว่าเสมอหรือไม่?", answer: "ไม่เสมอไป จำนวน shots ต้องสัมพันธ์กับพื้นที่ พลังงาน เทคนิค และความหนาผิว การประเมินรายเคสสำคัญกว่าการเปรียบเทียบตัวเลขอย่างเดียว" },
       { question: "ผลลัพธ์อยู่นานเท่าไร?", answer: "แตกต่างตามอายุ สภาพผิว พลังงานที่ใช้ และพฤติกรรม หลังประเมินแพทย์จะแนะนำช่วงเวลาติดตามหรือทำซ้ำอย่างเหมาะสม" },
     ],
-    reviews: pickReviews("Oligio", "Oligio", "Oligio"),
+    reviews: collectReviews("facial-contouring", 12, ["Oligio"]),
     caution: standardCaution,
   },
   "ultraformer-iii": {
@@ -196,7 +204,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       { question: "เห็นผลทันทีหรือไม่?", answer: "บางคนรู้สึกตึงขึ้นหลังทำ แต่กระบวนการปรับตัวของคอลลาเจนใช้เวลา ผลลัพธ์และช่วงเวลาที่สังเกตได้แตกต่างกัน" },
       { question: "ควรทำกี่ shots?", answer: "ขึ้นกับพื้นที่ ความหนาเนื้อ และแผนการวางแนว ไม่ควรตัดสินคุณภาพจากจำนวน shots เพียงอย่างเดียว" },
     ],
-    reviews: pickReviews("Ultraformer III", "Ultraformer III", "Ultraformer III"),
+    reviews: collectReviews("facial-contouring", 12, ["Ultraformer III"]),
     caution: standardCaution,
   },
   ultherapy: {
@@ -235,7 +243,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       { question: "Ultherapy ต่างจาก Ultraformer III จุดใดชัดที่สุด?", answer: "จุดต่างสำคัญคือ Ultherapy มีระบบภาพอัลตราซาวด์แบบเรียลไทม์อยู่ในแพลตฟอร์ม ขณะที่ Ultraformer III ใช้ MMFU และหัวหลายระดับโดยไม่มีระบบภาพแบบเดียวกัน" },
       { question: "ต้องทำกี่ครั้ง?", answer: "หลายแผนออกแบบเป็นการทำครั้งเดียวแล้วติดตาม แต่ความจำเป็นในการทำซ้ำขึ้นกับความหย่อนคล้อย อายุ และการตอบสนองของแต่ละคน" },
     ],
-    reviews: pickReviews("Ultherapy"),
+    reviews: collectReviews("facial-contouring", 12, ["Ultherapy"]),
     caution: standardCaution,
   },
   injectables: {
@@ -273,7 +281,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       { question: "ควรฉีดกี่ cc หรือกี่ยูนิต?", answer: "ไม่มีจำนวนเดียวที่เหมาะกับทุกคน ต้องพิจารณาโครงหน้า ความแข็งแรงของกล้ามเนื้อ ผลิตภัณฑ์ และเป้าหมายร่วมกัน" },
       { question: "ทำพร้อมเครื่องยกกระชับได้หรือไม่?", answer: "บางแผนสามารถจัดลำดับร่วมกันได้ แต่ควรให้แพทย์กำหนดว่าเครื่องหรือโปรแกรมฉีดควรทำก่อนและต้องเว้นระยะเท่าไร" },
     ],
-    reviews: pickReviews("Filler คาง", "Botox กราม", "Juvelook"),
+    reviews: collectReviews("injectables", 12),
     caution: standardCaution,
   },
 };

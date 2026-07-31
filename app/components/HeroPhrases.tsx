@@ -4,19 +4,19 @@ import { useEffect, useRef, useState } from "react";
 
 const phrases = [
   {
-    firstLine: "เครื่องมือระดับโลก",
-    highlight: "ลงทุนเพื่อผลลัพธ์ที่ดี",
-    description: "คัดสรรเทคโนโลยีมูลค่าสูงจากผู้ผลิตชั้นนำ พร้อมมาตรฐานสากลที่ตรวจสอบได้",
+    firstLine: "เทคโนโลยีชั้นนำ",
+    highlight: "เลือกอย่างมีมาตรฐาน",
+    description: "คัดสรรเทคโนโลยีทางการแพทย์จากผู้ผลิตชั้นนำ พร้อมข้อมูลมาตรฐานที่ตรวจสอบได้",
   },
   {
     firstLine: "มาตรฐานที่ไว้ใจได้",
-    highlight: "ดูแลในราคาที่เข้าถึงได้",
-    description: "เปิดโอกาสให้เข้าถึงเครื่องมือคุณภาพสูง โดยมีแพทย์ประเมินและวางแผนเป็นรายบุคคล",
+    highlight: "ดูแลให้เหมาะกับคุณ",
+    description: "แพทย์ประเมินปัญหาและเลือกแนวทางการดูแลให้เหมาะกับผิวและเป้าหมายของแต่ละคน",
   },
   {
     firstLine: "เครื่องแท้มีที่มา",
-    highlight: "มั่นใจเพราะตรวจสอบได้",
-    description: "หลายเทคโนโลยีได้รับมาตรฐาน US FDA ตามรุ่นและข้อบ่งใช้ พร้อมข้อมูลเครื่องที่ชัดเจน",
+    highlight: "ข้อมูลชัด ตรวจสอบได้",
+    description: "ตรวจสอบชื่อรุ่น ผู้ผลิต แหล่งที่มา และมาตรฐานที่เกี่ยวข้องกับแต่ละเทคโนโลยีได้",
   },
 ] as const;
 
@@ -61,7 +61,7 @@ export function HeroPhrases() {
   return (
     <div className="hero-message">
       <div className={isVisible ? "hero-phrase is-visible" : "hero-phrase"} aria-live="off">
-        <h1>{activePhrase.firstLine}<br /><em>{activePhrase.highlight}</em></h1>
+        <h1><span className="hero-first-line">{activePhrase.firstLine}</span><br /><em>{activePhrase.highlight}</em></h1>
         <p className="hero-description">{activePhrase.description}</p>
       </div>
       <div className="hero-phrase-controls" role="group" aria-label="เลือกข้อความแนะนำ The Wonder Clinic">

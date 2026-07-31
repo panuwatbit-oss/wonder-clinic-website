@@ -72,7 +72,7 @@ export function ServiceDetailPage({ service }: { service: ServiceDetail }) {
       <div>{service.faqs.map((faq, index) => <details key={faq.question}><summary><span>0{index + 1}</span>{faq.question}<i>＋</i></summary><p>{faq.answer}</p></details>)}</div>
     </section>
 
-    <section className="page-cta"><p className="eyebrow">PERSONALIZED PLAN</p><h2>เครื่องที่ดี<br /><em>ต้องมาพร้อมแผนที่เหมาะสม</em></h2><p>ส่งรายละเอียดปัญหาให้ทีมงานนัดประเมิน พร้อมสอบถามชื่อรุ่น Certificate และมาตรฐานของเครื่องก่อนตัดสินใจ</p><div className="detail-cta-actions"><a className="button" href="https://line.me/R/ti/p/@thewonderclinic" target="_blank" rel="noreferrer">LINE <span>↗</span></a><a className="outline-button" href="tel:020288399">โทร 02-028-8399</a><a className="outline-button" href="https://m.me/thewonderclinic" target="_blank" rel="noreferrer">Messenger <span>↗</span></a></div></section>
+    <section className="page-cta"><p className="eyebrow">PERSONALIZED PLAN</p><h2>แผนที่เหมาะกับคุณ<br /><em>เริ่มจากการประเมินที่ดี</em></h2><p>ส่งรายละเอียดปัญหาให้ทีมงานนัดประเมิน พร้อมสอบถามชื่อรุ่น แหล่งที่มา และมาตรฐานที่เกี่ยวข้องก่อนตัดสินใจ</p><div className="detail-cta-actions"><a className="button" href="https://line.me/R/ti/p/@thewonderclinic" target="_blank" rel="noreferrer">LINE <span>↗</span></a><a className="outline-button" href="tel:020288399">โทร 02-028-8399</a><a className="outline-button" href="https://m.me/thewonderclinic" target="_blank" rel="noreferrer">Messenger <span>↗</span></a></div></section>
     <SiteFooter />
   </main>;
 }

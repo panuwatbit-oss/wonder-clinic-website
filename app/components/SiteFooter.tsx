@@ -3,7 +3,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div>
         <strong>THE WONDER CLINIC</strong>
-        <p>เครื่องมือมาตรฐานสากลจากผู้ผลิตชั้นนำ พร้อมแผนการดูแลเฉพาะบุคคลและข้อมูลที่ตรวจสอบได้</p>
+        <p>เทคโนโลยีทางการแพทย์จากผู้ผลิตชั้นนำ พร้อมการประเมินเป็นรายบุคคลและข้อมูลที่ตรวจสอบได้</p>
       </div>
       <nav aria-label="เมนูส่วนท้าย">
         <a href="/services">บริการ</a>
