@@ -124,6 +124,7 @@ test("keeps the complete review library and responsive gallery wired into the si
   assert.match(css, /calc\(100vw - 56px\)/);
   assert.match(css, /\.feature-yag \.button \{ position:relative; z-index:2; \}/);
   assert.match(css, /desktop-nav-dropdown/);
+  assert.match(css, /service-review-card/);
   assert.match(css, /mobile-nav-group/);
   assert.match(layout, /Noto_Sans_Thai/);
   assert.match(navigation, /โปรโมชั่นประจำเดือน/);
