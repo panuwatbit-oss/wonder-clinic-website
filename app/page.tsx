@@ -1,4 +1,5 @@
 import { BeforeAfterSlider } from "./components/BeforeAfterSlider";
+import { MobileMenu } from "./components/MobileMenu";
 
 const services = [
   {
@@ -76,13 +77,16 @@ export default function Home() {
         <a className="brand" href="#top" aria-label="The Wonder Clinic หน้าแรก">
           <img src="/brand/logo/wonder-clinic-logo-ai-transparent-2048.png" alt="The Wonder Clinic" />
         </a>
-        <nav aria-label="เมนูหลัก">
+        <nav className="desktop-nav" aria-label="เมนูหลัก">
           <a href="#services">บริการ</a>
           <a href="#programs">โปรแกรม</a>
           <a href="#standards">มาตรฐาน</a>
           <a href="#about">เกี่ยวกับเรา</a>
         </nav>
-        <a className="button button-small" href="#booking">จองคิว</a>
+        <div className="header-actions">
+          <a className="button button-small" href="#booking">จองคิว</a>
+          <MobileMenu />
+        </div>
       </header>
 
       <section className="hero" id="top">
@@ -207,7 +211,11 @@ export default function Home() {
         <p className="eyebrow">LET&apos;S TALK</p>
         <h2>เริ่มต้นดูแล<br /><em>ในแบบของคุณ</em></h2>
         <p>สอบถามข้อมูลเพิ่มเติม หรือจองคิวล่วงหน้ากับทีม The Wonder Clinic</p>
-        <div className="booking-actions"><a className="button" href="https://line.me/R/ti/p/@thewonderclinic" target="_blank" rel="noreferrer">คุยกับเราทาง LINE <span>↗</span></a><a className="outline-button" href="tel:020288399">โทร 02-028-8399</a></div>
+        <div className="booking-actions">
+          <a className="button" href="https://line.me/R/ti/p/@thewonderclinic" target="_blank" rel="noreferrer">LINE <span>↗</span></a>
+          <a className="outline-button" href="tel:020288399">โทร 02-028-8399</a>
+          <a className="outline-button messenger-button" href="https://m.me/thewonderclinic" target="_blank" rel="noreferrer">Messenger <span>↗</span></a>
+        </div>
         <p className="booking-note">Ladprao Soi 4 · เปิดบริการทุกวัน 11:00–20:00 น.</p>
       </section>
 
