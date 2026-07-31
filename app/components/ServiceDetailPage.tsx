@@ -63,7 +63,7 @@ export function ServiceDetailPage({ service }: { service: ServiceDetail }) {
 
     <section className="page-section service-review-strip">
       <div className="page-heading"><div><p className="eyebrow">REAL CASES</p><h2>รีวิวที่เกี่ยวข้อง<br /><em>จากผู้รับบริการจริง</em></h2></div><p>ภาพรีวิวใช้เพื่อประกอบการตัดสินใจ ผลลัพธ์แตกต่างกันตามแต่ละบุคคล</p></div>
-      <div>{service.reviews.map((review) => <img key={review.src} src={review.src} alt={review.alt} loading="lazy" />)}</div>
+      <div className={`service-review-grid${service.reviews.length === 1 ? " is-single" : ""}`}>{service.reviews.map((review) => <img key={review.src} src={review.src} alt={review.alt} loading="lazy" />)}</div>
       <a className="text-link" href="/reviews">ดูคลังรีวิวทั้งหมด <span>↗</span></a>
     </section>
 

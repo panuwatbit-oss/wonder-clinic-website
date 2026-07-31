@@ -1,3 +1,5 @@
+import { reviewGalleryItems } from "../review-data";
+
 export type ServiceFaq = { question: string; answer: string };
 
 export type ServiceDetail = {
@@ -25,6 +27,20 @@ export type ServiceDetail = {
 };
 
 const standardCaution = "ข้อมูลนี้เป็นข้อมูลทั่วไป ไม่ใช่การวินิจฉัยหรือรับประกันผลลัพธ์ แพทย์ต้องประเมินสภาพผิว ประวัติสุขภาพ และความเหมาะสมก่อนรับบริการทุกครั้ง";
+
+function pickReviews(...titles: string[]) {
+  const titleOffsets = new Map<string, number>();
+  const selected: { src: string; alt: string }[] = [];
+
+  for (const title of titles) {
+    const offset = titleOffsets.get(title) ?? 0;
+    const item = reviewGalleryItems.filter((review) => review.title === title)[offset];
+    titleOffsets.set(title, offset + 1);
+    if (item) selected.push({ src: item.src, alt: item.alt });
+  }
+
+  return selected;
+}
 
 export const serviceDetails: Record<string, ServiceDetail> = {
   "discovery-pico": {
@@ -63,11 +79,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       { question: "ใช้รักษาฝ้าได้ทุกชนิดหรือไม่?", answer: "ฝ้ามีหลายชนิดและมีโอกาสกลับมาเป็นซ้ำ เลเซอร์ไม่ใช่คำตอบเดียวสำหรับทุกคน แพทย์ต้องประเมินร่วมกับพฤติกรรม แสงแดด และการดูแลผิวอื่น ๆ" },
       { question: "เครื่องของคลินิกมี 694 nm หรือไม่?", answer: "694 nm มีเฉพาะ Discovery PICO บางรุ่น จึงควรตรวจสอบป้ายรุ่นและ Certificate ของเครื่องในสาขาก่อนยืนยัน" },
     ],
-    reviews: [
-      { src: "/media/reviews/discovery-pico-review.webp", alt: "รีวิว Discovery PICO" },
-      { src: "/media/reviews/library/review-003-1p98pTyjqlFhLjr8fvorsFz5bnxSVz63r.webp", alt: "รีวิวผลลัพธ์โปรแกรม Pico" },
-      { src: "/media/reviews/library/review-008-1hNXFSRXw-RGvmaRLas9KcNa_YXmqFJVK.webp", alt: "รีวิวดูแลผิวด้วย Pico" },
-    ],
+    reviews: pickReviews("Discovery Pico", "Pico ฝ้า กระ", "Pico รอยดำ รอยสิว"),
     caution: standardCaution,
   },
   "yag-hair-removal": {
@@ -106,11 +118,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       { question: "ทำไมต้องทำหลายครั้ง?", answer: "เลเซอร์ตอบสนองได้ดีกับเส้นขนในระยะเจริญเติบโต แต่เส้นขนในบริเวณเดียวกันไม่ได้อยู่ในระยะเดียวกันทั้งหมด จึงต้องวางรอบการทำต่อเนื่อง" },
       { question: "Cryo 6 เป็นเลเซอร์อีกเครื่องหรือไม่?", answer: "ไม่ใช่ Cryo 6 เป็นเครื่องส่งลมเย็นสำหรับช่วยลดอุณหภูมิผิวและเพิ่มความสบาย ใช้ร่วมกับเลเซอร์กำจัดขน" },
     ],
-    reviews: [
-      { src: "/media/reviews/yag-underarm-review.webp", alt: "รีวิว YAG กำจัดขนรักแร้" },
-      { src: "/media/reviews/library/review-044-1RZ2Upy_l_WK-mA3ha-fl5oMFEdB0_Xf7.webp", alt: "รีวิวเลเซอร์กำจัดขน" },
-      { src: "/media/reviews/library/review-067-1_8NnH_9_2JgO2e8G1gTF5zE3L9JU7oV7.webp", alt: "รีวิวผลลัพธ์กำจัดขน" },
-    ],
+    reviews: pickReviews("เลเซอร์ขนรักแร้", "เลเซอร์ขนหนวดเครา", "เลเซอร์ขนขา"),
     caution: standardCaution,
   },
   oligio: {
@@ -149,11 +157,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       { question: "จำนวน shots มากกว่าดีกว่าเสมอหรือไม่?", answer: "ไม่เสมอไป จำนวน shots ต้องสัมพันธ์กับพื้นที่ พลังงาน เทคนิค และความหนาผิว การประเมินรายเคสสำคัญกว่าการเปรียบเทียบตัวเลขอย่างเดียว" },
       { question: "ผลลัพธ์อยู่นานเท่าไร?", answer: "แตกต่างตามอายุ สภาพผิว พลังงานที่ใช้ และพฤติกรรม หลังประเมินแพทย์จะแนะนำช่วงเวลาติดตามหรือทำซ้ำอย่างเหมาะสม" },
     ],
-    reviews: [
-      { src: "/media/reviews/oligio-review.webp", alt: "รีวิว Oligio" },
-      { src: "/media/reviews/library/review-104-1xDreBNa2X_aFHPTN9uX-6-0zw6cF_fP3.webp", alt: "รีวิวยกกระชับและกรอบหน้า" },
-      { src: "/media/reviews/library/review-123-18vD_k6UMnS2y0ElpYwu6k4qopv8LURkh.webp", alt: "รีวิวปรับรูปหน้า" },
-    ],
+    reviews: pickReviews("Oligio", "Oligio", "Oligio"),
     caution: standardCaution,
   },
   "ultraformer-iii": {
@@ -192,11 +196,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       { question: "เห็นผลทันทีหรือไม่?", answer: "บางคนรู้สึกตึงขึ้นหลังทำ แต่กระบวนการปรับตัวของคอลลาเจนใช้เวลา ผลลัพธ์และช่วงเวลาที่สังเกตได้แตกต่างกัน" },
       { question: "ควรทำกี่ shots?", answer: "ขึ้นกับพื้นที่ ความหนาเนื้อ และแผนการวางแนว ไม่ควรตัดสินคุณภาพจากจำนวน shots เพียงอย่างเดียว" },
     ],
-    reviews: [
-      { src: "/media/reviews/ultraformer-review.webp", alt: "รีวิว Ultraformer III" },
-      { src: "/media/reviews/library/review-141-1aebYcA8UcFws6mU19lI1CPDAOhNGDXcQ.webp", alt: "รีวิวยกกระชับใบหน้า" },
-      { src: "/media/reviews/library/review-149-1bbom1kjpU-Tlai-duJYkm887NDCnEmiD.webp", alt: "รีวิวดูแลกรอบหน้า" },
-    ],
+    reviews: pickReviews("Ultraformer III", "Ultraformer III", "Ultraformer III"),
     caution: standardCaution,
   },
   ultherapy: {
@@ -235,11 +235,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       { question: "Ultherapy ต่างจาก Ultraformer III จุดใดชัดที่สุด?", answer: "จุดต่างสำคัญคือ Ultherapy มีระบบภาพอัลตราซาวด์แบบเรียลไทม์อยู่ในแพลตฟอร์ม ขณะที่ Ultraformer III ใช้ MMFU และหัวหลายระดับโดยไม่มีระบบภาพแบบเดียวกัน" },
       { question: "ต้องทำกี่ครั้ง?", answer: "หลายแผนออกแบบเป็นการทำครั้งเดียวแล้วติดตาม แต่ความจำเป็นในการทำซ้ำขึ้นกับความหย่อนคล้อย อายุ และการตอบสนองของแต่ละคน" },
     ],
-    reviews: [
-      { src: "/media/reviews/library/review-157-1ly44wd8Gqp5ALZn5qOTl0knEQFrqKFT2.webp", alt: "รีวิว Ultherapy" },
-      { src: "/media/reviews/library/review-166-1mlDEGiy9x_tUHFJyA1uOBs7gxTVYaBQO.webp", alt: "รีวิวเทคโนโลยียกกระชับ" },
-      { src: "/media/reviews/library/review-172-1oclSiFiwMgsucvdyx-pBOZ1MSc4Tm_6y.webp", alt: "รีวิวกรอบหน้า" },
-    ],
+    reviews: pickReviews("Ultherapy"),
     caution: standardCaution,
   },
   injectables: {
@@ -277,11 +273,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       { question: "ควรฉีดกี่ cc หรือกี่ยูนิต?", answer: "ไม่มีจำนวนเดียวที่เหมาะกับทุกคน ต้องพิจารณาโครงหน้า ความแข็งแรงของกล้ามเนื้อ ผลิตภัณฑ์ และเป้าหมายร่วมกัน" },
       { question: "ทำพร้อมเครื่องยกกระชับได้หรือไม่?", answer: "บางแผนสามารถจัดลำดับร่วมกันได้ แต่ควรให้แพทย์กำหนดว่าเครื่องหรือโปรแกรมฉีดควรทำก่อนและต้องเว้นระยะเท่าไร" },
     ],
-    reviews: [
-      { src: "/media/reviews/filler-chin-review.webp", alt: "รีวิวฟิลเลอร์คาง" },
-      { src: "/media/reviews/botox-jaw-review.webp", alt: "รีวิวโปรแกรม Botox กราม" },
-      { src: "/media/reviews/library/review-184-1kMnBhcpjkZTfaXCODL0h5lJo4wLKWctH.webp", alt: "รีวิวโปรแกรมฉีดโดยแพทย์" },
-    ],
+    reviews: pickReviews("Filler คาง", "Botox กราม", "Juvelook"),
     caution: standardCaution,
   },
 };

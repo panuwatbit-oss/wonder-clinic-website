@@ -60,15 +60,15 @@ test("uses a dedicated generated WebP hero image on every primary page", async (
 
 test("server-renders every detailed service page with FAQ and booking actions", async () => {
   const routes = [
-    ["/services/discovery-pico", "Discovery PICO"],
-    ["/services/yag-hair-removal", "Quanta Light EVO"],
-    ["/services/oligio", "Oligio"],
-    ["/services/ultraformer-iii", "Ultraformer III"],
-    ["/services/ultherapy", "Ultherapy"],
-    ["/services/injectables", "โปรแกรมฉีดโดยแพทย์"],
+    ["/services/discovery-pico", "Discovery PICO", "review-031"],
+    ["/services/yag-hair-removal", "Quanta Light EVO", "review-037"],
+    ["/services/oligio", "Oligio", "review-017"],
+    ["/services/ultraformer-iii", "Ultraformer III", "review-022"],
+    ["/services/ultherapy", "Ultherapy", "review-003"],
+    ["/services/injectables", "โปรแกรมฉีดโดยแพทย์", "review-107"],
   ];
 
-  for (const [path, content] of routes) {
+  for (const [path, content, reviewAsset] of routes) {
     const response = await render(path);
     assert.equal(response.status, 200, path);
     const html = await response.text();
@@ -77,6 +77,7 @@ test("server-renders every detailed service page with FAQ and booking actions", 
     assert.match(html, /Messenger/, path);
     assert.match(html, /ผลลัพธ์แตกต่างกัน/, path);
     assert.doesNotMatch(html, /ภาพผลิตภัณฑ์จาก/, path);
+    assert.match(html, new RegExp(reviewAsset), `${path} review mapping`);
   }
 });
 
