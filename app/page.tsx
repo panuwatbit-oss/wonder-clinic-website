@@ -54,6 +54,12 @@ const resultCases = [
     beforeSrc: "/media/mockups/yag-before-mockup.png",
     afterSrc: "/media/mockups/yag-after-mockup.png",
   },
+  {
+    title: "Doctor-led Injectables",
+    subtitle: "ตัวอย่างการจัดวางรีวิวผิวดูสดชื่น",
+    beforeSrc: "/media/mockups/injectable-before-mockup.png",
+    afterSrc: "/media/mockups/injectable-after-mockup.png",
+  },
 ];
 
 const programs = [
@@ -160,6 +166,7 @@ export default function Home() {
           <article><div className="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/kpeeYnGT_Sw?rel=0" title="เลเซอร์กำจัดขนรักแร้ จาก The Wonder Clinic" loading="lazy" allowFullScreen /></div><p>YAG HAIR REMOVAL</p><h3>เลเซอร์กำจัดขนรักแร้ ทำแล้วปังยังไง</h3></article>
           <article><div className="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/FMdT3UKOZOo?rel=0" title="Discovery Pico ลดหลุมสิว จาก The Wonder Clinic" loading="lazy" allowFullScreen /></div><p>DISCOVERY PICO</p><h3>ดูแลหลุมสิวและรูขุมขนกว้าง</h3></article>
           <article><div className="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/SnBF8rjRV30?rel=0" title="Discovery Pico ครั้งแรก จาก The Wonder Clinic" loading="lazy" allowFullScreen /></div><p>DISCOVERY PICO</p><h3>Discovery Pico ครั้งแรก</h3></article>
+          <article><div className="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/E52kQeEzzP4?rel=0" title="4 หัตถการดูแลรูขุมขน จาก The Wonder Clinic" loading="lazy" allowFullScreen /></div><p>DOCTOR&apos;S ADVICE</p><h3>4 หัตถการตัวท็อปเพื่อดูแลรูขุมขน</h3></article>
         </div>
         <a className="text-link" href="https://www.youtube.com/@TheWonderClinic" target="_blank" rel="noreferrer">ดูวิดีโอทั้งหมดบน YouTube <span>↗</span></a>
       </section>
