@@ -1,0 +1,24 @@
+import type { Metadata } from "next";
+import { PageHero } from "../components/PageHero";
+import { SiteFooter } from "../components/SiteFooter";
+import { SiteHeader } from "../components/SiteHeader";
+
+export const metadata: Metadata = { title: "บริการและเครื่องมือมาตรฐานสากล | The Wonder Clinic", description: "รวม Discovery PICO และ Quanta YAG จากอิตาลี พร้อม Oligio, Ultraformer III, Ultherapy และโปรแกรมฉีดโดยแพทย์" };
+
+const services = [
+  { id: "discovery-pico", number: "01", title: "Discovery PICO", en: "QUANTA SYSTEM · ITALY", image: "/media/services/discovery-pico-cover.webp", description: "Picosecond Laser มูลค่าสูงจาก Quanta System ประเทศอิตาลี มีหัวและโหมดที่แพทย์สามารถเลือกให้เหมาะกับปัญหาผิวแต่ละประเภท", items: ["ผิวหน้าและสีผิวไม่สม่ำเสมอ", "ฝ้า กระ และรอยดำ", "รอยสิวและผิวไม่เรียบเนียน", "รอยแตกลายและผิวเฉพาะบริเวณ"] },
+  { id: "yag-hair-removal", number: "02", title: "Quanta YAG กำจัดขน", en: "LONG-PULSED ND:YAG · ITALY", image: "/media/services/yag-hair-removal-cover.webp", description: "Long-pulsed Nd:YAG จาก Quanta System ทำงานร่วมกับ Cryo 6 จาก Zimmer เพื่อช่วยลดความรู้สึกร้อนและเพิ่มความสบายระหว่างรับบริการ", items: ["ใบหน้า หนวด และเครา", "รักแร้ แขน และขา", "ลำตัวและบริเวณเฉพาะ", "Bikini และ Brazilian"] },
+  { id: "facial-contouring", number: "03", title: "ปรับรูปหน้าด้วยเทคโนโลยี", en: "GLOBAL LIFTING TECHNOLOGIES", image: "/media/services/facial-contour-cover.webp", description: "เลือกใช้พลังงานต่างชนิดจากเครื่อง Oligio, Ultraformer III และ Ultherapy ตามระดับความหย่อนคล้อย ชั้นผิว และเป้าหมายของแต่ละคน", items: ["Oligio · Monopolar RF", "Ultraformer III · MMFU", "Ultherapy · MFU-V", "ประเมินและวางแผนโดยแพทย์"] },
+  { id: "injectables", number: "04", title: "โปรแกรมฉีดโดยแพทย์", en: "DOCTOR-LED INJECTABLES", image: "/media/services/injectable-cover.webp", description: "ประเมินรูปหน้าเป็นรายเคส พร้อมผลิตภัณฑ์ที่ตรวจสอบได้และแผนการดูแลเฉพาะบุคคล", items: ["Botox", "Filler", "Skin Booster", "Biostimulator"] },
+];
+
+export default function ServicesPage() {
+  return <main><SiteHeader /><PageHero eyebrow="WORLD-CLASS TECHNOLOGY" title="เครื่องมือมูลค่าสูง" highlight="ในแผนที่เหมาะกับคุณ" description="คัดสรรเทคโนโลยีจากผู้ผลิตชั้นนำ หลายเครื่องได้รับมาตรฐาน US FDA ตามรุ่นและข้อบ่งใช้ พร้อมให้ตรวจสอบข้อมูลก่อนรับบริการ" image="/media/pages/services-hero.webp" />
+    <section className="page-section service-catalog">
+      {services.map((service, index) => <article className={index % 2 ? "catalog-item is-reverse" : "catalog-item"} id={service.id} key={service.id}>
+        <img src={service.image} alt={`ภาพตัวอย่าง ${service.title}`} />
+        <div><span>{service.number} · {service.en}</span><h2>{service.title}</h2><p>{service.description}</p><ul>{service.items.map(item => <li key={item}>{item}</li>)}</ul><a className="button" href="/contact">ปรึกษาโปรแกรม <span>↗</span></a></div>
+      </article>)}
+    </section>
+    <section className="page-cta"><p className="eyebrow">PERSONALIZED PLAN</p><h2>ไม่แน่ใจว่าควรเริ่ม<br /><em>จากโปรแกรมไหน?</em></h2><p>ส่งรายละเอียดปัญหาหรือเป้าหมายให้ทีมงานช่วยแนะนำแนวทางเบื้องต้น</p><a className="button" href="/contact">ปรึกษาและจองคิว <span>↗</span></a></section><SiteFooter /></main>;
+}

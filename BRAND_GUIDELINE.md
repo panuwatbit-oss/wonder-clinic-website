@@ -13,7 +13,7 @@
 
 ห้ามวาดใหม่ ตัดทอน เปลี่ยนฟอนต์ เปลี่ยนสัดส่วน หรือเพิ่มสัญลักษณ์อื่นเข้าไปในโลโก้
 
-สำหรับเว็บไซต์ ให้ใช้ `public/brand/logo/wonder-clinic-logo-ai-transparent-2048.png` เป็นไฟล์เดียวสำหรับแสดงผลหลัก
+สำหรับเว็บไซต์ ให้ใช้ `public/brand/logo/wonder-clinic-logo-ai-transparent-2048.webp` เป็นไฟล์เดียวสำหรับแสดงผลหลัก
 
 ## สีจากไฟล์ต้นฉบับ
 
@@ -39,6 +39,6 @@
 
 ## ไฟล์ที่จัดเตรียม
 
-- `public/brand/logo/wonder-clinic-logo-ai-transparent-2048.png` — เวอร์ชันใช้งานหลัก พื้นหลังโปร่งใส
+- `public/brand/logo/wonder-clinic-logo-ai-transparent-2048.webp` — เวอร์ชันใช้งานหลัก พื้นหลังโปร่งใส
 
 ไฟล์นี้มี alpha แบบไล่ระดับที่ขอบ เพื่อให้แสดงผลได้เรียบเนียนบนพื้นหลังที่เหมาะสม

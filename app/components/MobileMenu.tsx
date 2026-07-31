@@ -1,14 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
-const menuItems = [
-  ["บริการ", "#services"],
-  ["โปรแกรม", "#programs"],
-  ["รีวิว", "#reviews"],
-  ["มาตรฐาน", "#standards"],
-  ["เกี่ยวกับเรา", "#about"],
-];
+import { siteNavigation } from "../navigation";
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +29,24 @@ export function MobileMenu() {
       </button>
       {isOpen && (
         <nav className="mobile-menu-panel" id="mobile-navigation" aria-label="เมนูหลักบนมือถือ">
-          {menuItems.map(([label, href]) => <a key={href} href={href} onClick={() => setIsOpen(false)}>{label}<span>↗</span></a>)}
+          {siteNavigation.map((item) => item.children ? (
+            <details className="mobile-nav-group" key={item.label}>
+              <summary>{item.label}<span aria-hidden="true">＋</span></summary>
+              <div className="mobile-nav-children">
+                <a href={item.href} onClick={() => setIsOpen(false)}>ดูทั้งหมด {item.label}<span>↗</span></a>
+                {item.children.map((child) => (
+                  <div className="mobile-nav-section" key={child.label}>
+                    <a href={child.href} onClick={() => setIsOpen(false)}>{child.label}<span>↗</span></a>
+                    {child.children?.map((subItem) => (
+                      <a className="mobile-nav-subitem" href={subItem.href} key={subItem.label} onClick={() => setIsOpen(false)}>{subItem.label}</a>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </details>
+          ) : (
+            <a key={item.label} href={item.href} onClick={() => setIsOpen(false)}>{item.label}<span>↗</span></a>
+          ))}
         </nav>
       )}
     </div>

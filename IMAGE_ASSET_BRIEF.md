@@ -6,17 +6,17 @@
 
 | จุดใช้งาน | ไฟล์ตัวอย่าง | ไฟล์สำหรับกราฟิก | ขนาดส่งมอบ | สัดส่วน | แนวทางองค์ประกอบ |
 |---|---|---|---:|---:|---|
-| Hero หน้าแรก (Desktop) | `hero-beauty-sample.png` | `hero-main-desktop.webp` | 2400 × 1800 px | 4:3 | นางแบบอยู่ด้านขวา เว้นพื้นที่ซ้ายสำหรับข้อความ |
-| Hero หน้าแรก (Mobile) | `hero-beauty-sample.png` | `hero-main-mobile.webp` | 1440 × 1800 px | 4:5 | ครอปใหม่ให้อยู่กึ่งกลาง ห้ามเพียงย่อจาก Desktop |
-| Discovery Pico | `discovery-pico-sample.png` | `service-discovery-pico.webp` | 2400 × 1800 px | 4:3 | ผิวและใบหน้าอยู่ด้านขวา เว้นพื้นที่ซ้ายสำหรับหัวข้อ |
-| YAG กำจัดขน | `yag-hair-removal-sample.png` | `service-yag.webp` | 2400 × 1800 px | 4:3 | แสดงความมั่นใจและผิวเรียบลื่น ไม่ต้องมีเครื่องมือในภาพ |
+| Hero หน้าแรก (Desktop) | `hero-beauty-sample.webp` | `hero-main-desktop.webp` | 2400 × 1800 px | 4:3 | นางแบบอยู่ด้านขวา เว้นพื้นที่ซ้ายสำหรับข้อความ |
+| Hero หน้าแรก (Mobile) | `hero-beauty-sample.webp` | `hero-main-mobile.webp` | 1440 × 1800 px | 4:5 | ครอปใหม่ให้อยู่กึ่งกลาง ห้ามเพียงย่อจาก Desktop |
+| Discovery Pico | `discovery-pico-sample.webp` | `service-discovery-pico.webp` | 2400 × 1800 px | 4:3 | ผิวและใบหน้าอยู่ด้านขวา เว้นพื้นที่ซ้ายสำหรับหัวข้อ |
+| YAG กำจัดขน | `yag-hair-removal-sample.webp` | `service-yag.webp` | 2400 × 1800 px | 4:3 | แสดงความมั่นใจและผิวเรียบลื่น ไม่ต้องมีเครื่องมือในภาพ |
 | ปรับรูปหน้า | — | `service-facial-contour.webp` | 2400 × 1800 px | 4:3 | Beauty editorial ใบหน้าด้านข้าง เว้น negative space |
 | โปรแกรมฉีดโดยแพทย์ | — | `service-injectable.webp` | 2400 × 1800 px | 4:3 | สื่อความละเอียดและความน่าเชื่อถือ; ใช้ภาพแพทย์/ผลิตภัณฑ์จริงเท่านั้น |
 | แบนเนอร์โปรโมชั่น | — | `promo-YYYY-MM.webp` | 1200 × 1500 px | 4:5 | กราฟิกข้อความอ่านง่าย มี Safe area รอบด้าน 90 px |
 | รีวิวลูกค้า | — | `review-XX.webp` | 1080 × 1350 px | 4:5 | ใช้ภาพจริงพร้อมความยินยอม; หลีกเลี่ยงการแต่งผลลัพธ์เกินจริง |
 | ทีมแพทย์ | — | `doctor-name.webp` | 1200 × 1500 px | 4:5 | ภาพ Portrait ฉากหลังเรียบ โทนครีม/เหลือง |
 | บรรยากาศคลินิก | — | `clinic-space-XX.webp` | 2400 × 1600 px | 3:2 | ภาพสถานที่จริง แสงสว่างสะอาดและอบอุ่น |
-| Social share (Open Graph) | `public/og.png` | `og-cover.webp` | 1200 × 630 px | 1.91:1 | ใส่โลโก้และข้อความสั้นเพียงชุดเดียว |
+| Social share (Open Graph) | `public/og.webp` | `og-cover.webp` | 1200 × 630 px | 1.91:1 | ใส่โลโก้และข้อความสั้นเพียงชุดเดียว |
 
 ## ข้อกำหนดร่วม
 

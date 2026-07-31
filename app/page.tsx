@@ -1,30 +1,33 @@
-import { BeforeAfterSlider } from "./components/BeforeAfterSlider";
-import { MobileMenu } from "./components/MobileMenu";
+import { HeroPhrases } from "./components/HeroPhrases";
+import { ReviewGallery } from "./components/ReviewGallery";
+import { SiteFooter } from "./components/SiteFooter";
+import { SiteHeader } from "./components/SiteHeader";
+import { reviewGalleryItems } from "./review-data";
 
 const services = [
   {
     number: "01",
     title: "Discovery Pico",
     en: "Clearer, more even-looking skin",
-    description: "ดูแลปัญหาผิวหน้า ฝ้า รอยดำ และรอยแตกลาย ด้วยเลเซอร์พลังงานแม่นยำ",
+    description: "Picosecond Laser จาก Quanta System ประเทศอิตาลี สำหรับวางแผนดูแลสีผิวและผิวไม่เรียบเนียน",
     tag: "PICO LASER",
-    image: "/media/services/discovery-pico-cover.png",
+    image: "/media/services/discovery-pico-cover.webp",
   },
   {
     number: "02",
     title: "YAG กำจัดขน",
     en: "Smooth skin, made simple",
-    description: "ดูแลได้ตั้งแต่ใบหน้า รักแร้ แขน ขา ลำตัว ไปจนถึง Bikini และ Brazilian",
+    description: "Long-pulsed Nd:YAG จาก Quanta System ทำงานร่วมกับระบบลมเย็น Cryo 6",
     tag: "YAG HAIR REMOVAL",
-    image: "/media/services/yag-hair-removal-cover.png",
+    image: "/media/services/yag-hair-removal-cover.webp",
   },
   {
     number: "03",
     title: "ปรับรูปหน้าด้วยเลเซอร์",
     en: "Lift with technology",
-    description: "ยกกระชับ กรอบหน้าชัด ลดความหย่อนคล้อย และดูแลริ้วรอยอย่างเหมาะกับแต่ละคน",
+    description: "รวม Oligio, Ultraformer III และ Ultherapy เพื่อเลือกพลังงานให้เหมาะกับแต่ละปัญหา",
     tag: "FACIAL CONTOURING",
-    image: "/media/services/facial-contour-cover.png",
+    image: "/media/services/facial-contour-cover.webp",
   },
   {
     number: "04",
@@ -32,34 +35,7 @@ const services = [
     en: "Plan made for you",
     description: "Botox, Filler, Skin Booster และ Biostimulator พร้อมการประเมินโดยแพทย์",
     tag: "DOCTOR-LED INJECTABLES",
-    image: "/media/services/injectable-cover.png",
-  },
-];
-
-const resultCases = [
-  {
-    title: "Discovery Pico",
-    subtitle: "ตัวอย่างการจัดวางรีวิวผิว",
-    beforeSrc: "/media/mockups/before-mockup.png",
-    afterSrc: "/media/mockups/after-mockup.png",
-  },
-  {
-    title: "Facial Contouring",
-    subtitle: "ตัวอย่างการจัดวางรีวิวกรอบหน้า",
-    beforeSrc: "/media/mockups/contour-before-mockup.png",
-    afterSrc: "/media/mockups/contour-after-mockup.png",
-  },
-  {
-    title: "YAG Hair Removal",
-    subtitle: "ตัวอย่างการจัดวางรีวิวกำจัดขน",
-    beforeSrc: "/media/mockups/yag-before-mockup.png",
-    afterSrc: "/media/mockups/yag-after-mockup.png",
-  },
-  {
-    title: "Doctor-led Injectables",
-    subtitle: "ตัวอย่างการจัดวางรีวิวผิวดูสดชื่น",
-    beforeSrc: "/media/mockups/injectable-before-mockup.png",
-    afterSrc: "/media/mockups/injectable-after-mockup.png",
+    image: "/media/services/injectable-cover.webp",
   },
 ];
 
@@ -73,34 +49,19 @@ const programs = [
 export default function Home() {
   return (
     <main>
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="The Wonder Clinic หน้าแรก">
-          <img src="/brand/logo/wonder-clinic-logo-ai-transparent-2048.png" alt="The Wonder Clinic" />
-        </a>
-        <nav className="desktop-nav" aria-label="เมนูหลัก">
-          <a href="#services">บริการ</a>
-          <a href="#programs">โปรแกรม</a>
-          <a href="#standards">มาตรฐาน</a>
-          <a href="#about">เกี่ยวกับเรา</a>
-        </nav>
-        <div className="header-actions">
-          <a className="button button-small" href="#booking">จองคิว</a>
-          <MobileMenu />
-        </div>
-      </header>
+      <SiteHeader />
 
       <section className="hero" id="top">
         <div className="hero-copy">
           <p className="eyebrow">THE WONDER CLINIC · LADPRAO SOI 4</p>
-          <h1>ดูแลความงาม<br /><em>อย่างมีเหตุผล</em></h1>
-          <p className="hero-description">เทคโนโลยีระดับโลก การดูแลโดยแพทย์ และแผนที่ออกแบบเพื่อคุณ</p>
+          <HeroPhrases />
           <div className="hero-actions">
             <a className="button" href="#booking">ปรึกษาและจองคิว <span>↗</span></a>
             <a className="text-link" href="#services">ดูบริการทั้งหมด <span>↓</span></a>
           </div>
         </div>
         <div className="hero-art" aria-label="บริการหลักของ The Wonder Clinic">
-          <img className="hero-photo" src="/media/samples/hero-beauty-sample.png" alt="ภาพตัวอย่างแนวทาง Hero ของ The Wonder Clinic" />
+          <img className="hero-photo" src="/media/samples/hero-beauty-sample.webp" alt="ภาพตัวอย่างแนวทาง Hero ของ The Wonder Clinic" />
           <div className="hero-statement">
             <span>TECHNOLOGY</span>
             <strong>MEETS<br />CARE</strong>
@@ -113,13 +74,13 @@ export default function Home() {
       <section className="intro section" id="about">
         <p className="eyebrow">WHY WONDER</p>
         <div className="intro-grid">
-          <h2>ทุกการดูแล เริ่มจาก<br /><em>ความเข้าใจในตัวคุณ</em></h2>
-          <p>เราเชื่อว่าความสวยที่ดี ไม่ใช่การทำให้ทุกคนเหมือนกัน แต่คือการเลือกเทคโนโลยีและโปรแกรมที่เหมาะกับผิว ความกังวล และเป้าหมายของแต่ละคน</p>
+          <h2>ความมั่นใจ เริ่มจาก<br /><em>เครื่องมือที่ไว้ใจได้</em></h2>
+          <p>Wonder Clinic เลือกลงทุนกับเครื่องมือมูลค่าสูงจากผู้ผลิตเทคโนโลยีทางการแพทย์ชั้นนำ เพื่อให้ผู้รับบริการเข้าถึงการดูแลด้วยมาตรฐานสากลในราคาที่สมเหตุสมผล</p>
         </div>
         <div className="value-grid">
-          <article><b>01</b><h3>เทคโนโลยีที่เลือกมา</h3><p>รวมเลเซอร์และเครื่องมือที่ตอบโจทย์การดูแลผิวและรูปหน้า</p></article>
-          <article><b>02</b><h3>ดูแลโดยแพทย์</h3><p>ประเมินและวางแผนการดูแลที่เหมาะกับแต่ละบุคคล</p></article>
-          <article><b>03</b><h3>ผลลัพธ์ที่เป็นธรรมชาติ</h3><p>ยึดความปลอดภัยและความพอดีเป็นหัวใจสำคัญ</p></article>
+          <article><b>01</b><h3>World-Class Technology</h3><p>เครื่องมือจาก Quanta System, WONTECH, CLASSYS, Merz Aesthetics และ Zimmer</p></article>
+          <article><b>02</b><h3>มาตรฐานที่ตรวจสอบได้</h3><p>หลายเครื่องได้รับมาตรฐาน US FDA ตามรุ่นและข้อบ่งใช้ พร้อมข้อมูลแหล่งที่มาชัดเจน</p></article>
+          <article><b>03</b><h3>ลงทุนเพื่อคุณภาพ</h3><p>เลือกเครื่องมือมูลค่าสูงและให้แพทย์วางแผนการดูแลอย่างเหมาะสมเป็นรายบุคคล</p></article>
         </div>
       </section>
 
@@ -141,22 +102,23 @@ export default function Home() {
       </section>
 
       <section className="feature section">
-        <div className="feature-pico">
-          <img className="feature-image" src="/media/samples/discovery-pico-sample.png" alt="ภาพตัวอย่าง Discovery Pico" />
+        <div className="feature-pico" id="discovery-pico">
+          <img className="feature-image" src="/media/samples/discovery-pico-sample.webp" alt="ภาพตัวอย่าง Discovery Pico" />
           <div className="feature-copy">
             <p className="eyebrow">DISCOVERY PICO</p>
             <h2>เลเซอร์เพื่อการ<br /><em>ดูแลผิวอย่างละเอียด</em></h2>
-            <p>สำหรับผิวหน้า ฝ้า รอยดำ และรอยแตกลาย พร้อมคำแนะนำการดูแลก่อนและหลังทำ</p>
+            <p>Picosecond Laser จาก Quanta System ประเทศอิตาลี แพลตฟอร์มพลังงานสูงที่มีหัวและโหมดสำหรับวางแผนดูแลปัญหาผิวแตกต่างกัน</p>
             <a className="button button-dark" href="#booking">สอบถาม Discovery Pico <span>↗</span></a>
           </div>
         </div>
-        <div className="feature-yag">
-          <img className="feature-image" src="/media/samples/yag-hair-removal-sample.png" alt="ภาพตัวอย่าง YAG กำจัดขน" />
+        <div className="feature-yag" id="yag-hair-removal">
+          <img className="feature-image" src="/media/samples/yag-hair-removal-sample.webp" alt="ภาพตัวอย่าง YAG กำจัดขน" />
           <div className="feature-copy">
             <p className="eyebrow">YAG HAIR REMOVAL</p>
             <div className="laser-line" />
             <h2>ผิวเรียบลื่น<br />ในแบบที่คุณเลือก</h2>
-            <p>เลือกดูแลได้หลายบริเวณ ตั้งแต่ใบหน้าไปจนถึง Brazilian</p>
+            <p>Long-pulsed Nd:YAG จาก Quanta System พร้อมเครื่องเป่าลมเย็น Cryo 6 จาก Zimmer เพื่อช่วยเพิ่มความสบายระหว่างทำ</p>
+            <a className="button button-dark" href="#booking">สอบถาม YAG Hair Removal <span>↗</span></a>
           </div>
         </div>
       </section>
@@ -164,7 +126,6 @@ export default function Home() {
       <section className="video-reviews section" id="reviews">
         <div className="section-heading">
           <div><p className="eyebrow">WONDER ON YOUTUBE</p><h2>ดูวิดีโอรีวิว<br /><em>และประสบการณ์จริง</em></h2></div>
-          <p>คัดเลือกวิดีโอจากช่อง YouTube ของ The Wonder Clinic เพื่อให้ดูบรรยากาศและข้อมูลของแต่ละโปรแกรมได้ง่ายขึ้น</p>
         </div>
         <div className="video-grid">
           <article><div className="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/kpeeYnGT_Sw?rel=0" title="เลเซอร์กำจัดขนรักแร้ จาก The Wonder Clinic" loading="lazy" allowFullScreen /></div><p>YAG HAIR REMOVAL</p><h3>เลเซอร์กำจัดขนรักแร้ ทำแล้วปังยังไง</h3></article>
@@ -175,23 +136,12 @@ export default function Home() {
         <a className="text-link" href="https://www.youtube.com/@TheWonderClinic" target="_blank" rel="noreferrer">ดูวิดีโอทั้งหมดบน YouTube <span>↗</span></a>
       </section>
 
-      <section className="results section">
-        <div className="results-copy">
-          <div><p className="eyebrow">RESULTS &amp; REVIEWS</p><h2>ผลลัพธ์ที่ดี<br /><em>เริ่มจากแผนที่เหมาะสม</em></h2></div>
-          <div><p>พื้นที่นี้เตรียมไว้สำหรับรีวิวและภาพก่อน–หลังจากลูกค้าจริง โดยต้องได้รับความยินยอมก่อนเผยแพร่ทุกครั้ง</p><a className="text-link" href="#booking">ปรึกษาแนวทางที่เหมาะกับคุณ <span>↗</span></a></div>
+      <section className="review-library section" id="review-gallery">
+        <div className="section-heading">
+          <div><p className="eyebrow">REAL REVIEW LIBRARY</p><h2>รวมรีวิวจริง<br /><em>จากหลายโปรแกรม</em></h2></div>
         </div>
-        <div className="results-grid">
-          {resultCases.map((result) => (
-            <article className="result-case" key={result.title}>
-              <figure className="results-mockup">
-                <BeforeAfterSlider beforeSrc={result.beforeSrc} afterSrc={result.afterSrc} label={result.title} />
-                <figcaption><span>BEFORE · MOCKUP</span><span>AFTER · MOCKUP</span></figcaption>
-              </figure>
-              <div className="result-meta"><span>MOCKUP CASE</span><h3>{result.title}</h3><p>{result.subtitle}</p></div>
-            </article>
-          ))}
-        </div>
-        <p className="results-disclaimer">ภาพทั้งหมดในส่วนนี้เป็น Mockup เพื่อแสดงรูปแบบเว็บไซต์เท่านั้น ไม่ใช่ผลลัพธ์จริงของผู้รับบริการ</p>
+        <ReviewGallery items={reviewGalleryItems} />
+        <p className="review-library-note">ผลลัพธ์ขึ้นอยู่กับสภาพผิว ปัญหาเฉพาะบุคคล และแผนการดูแลของแต่ละคน</p>
       </section>
 
       <section className="programs section" id="programs">
@@ -203,8 +153,14 @@ export default function Home() {
       </section>
 
       <section className="standards section" id="standards">
-        <div><p className="eyebrow">SAFETY FIRST</p><h2>มาตรฐานและ<br /><em>ความปลอดภัย</em></h2></div>
-        <div className="standards-copy"><p>ทุกขั้นตอนควรเริ่มจากข้อมูลที่ครบถ้วน การประเมินโดยผู้เชี่ยวชาญ และการเลือกผลิตภัณฑ์หรือเทคโนโลยีที่เหมาะสม</p><a className="text-link" href="#booking">ปรึกษาเบื้องต้น <span>↗</span></a></div>
+        <div><p className="eyebrow">GLOBAL STANDARD TECHNOLOGY</p><h2>ลงทุนกับเครื่องมือ<br /><em>เพื่อความมั่นใจของคุณ</em></h2></div>
+        <div className="standards-copy"><p>Wonder Clinic คัดสรรเครื่องมือจากผู้ผลิตชั้นนำระดับโลก หลายเทคโนโลยีได้รับมาตรฐาน US FDA ตามรุ่นและข้อบ่งใช้ พร้อมให้ตรวจสอบชื่อเครื่อง แหล่งที่มา และ Certificate ก่อนตัดสินใจ</p><a className="text-link" href="/about">ดูมาตรฐานของเรา <span>↗</span></a></div>
+        <div className="technology-proof" aria-label="เทคโนโลยีหลักของ The Wonder Clinic">
+          <article><span>ITALY</span><strong>QUANTA SYSTEM</strong><p>Discovery PICO · Long-pulsed Nd:YAG</p></article>
+          <article><span>KOREA</span><strong>WONTECH · CLASSYS</strong><p>Oligio · Ultraformer III</p></article>
+          <article><span>USA · GERMANY</span><strong>MERZ · ZIMMER</strong><p>Ultherapy · Cryo 6</p></article>
+        </div>
+        <p className="standards-note">มาตรฐานและข้อบ่งใช้แตกต่างกันตามรุ่นเครื่อง ประเทศที่ขึ้นทะเบียน และแผนการรักษาที่แพทย์ประเมิน</p>
       </section>
 
       <section className="booking section" id="booking">
@@ -219,7 +175,33 @@ export default function Home() {
         <p className="booking-note">Ladprao Soi 4 · เปิดบริการทุกวัน 11:00–20:00 น.</p>
       </section>
 
-      <footer><span>© {new Date().getFullYear()} THE WONDER CLINIC</span><span>BEAUTY, WITH UNDERSTANDING</span></footer>
+      <section className="location" id="location" aria-labelledby="location-title">
+        <div className="location-copy">
+          <p className="eyebrow">VISIT THE WONDER CLINIC</p>
+          <h2 id="location-title">เดินทางมาหาเรา<br /><em>ได้ง่ายกว่าที่คิด</em></h2>
+          <address>150 ซอยลาดพร้าว 4 แขวงจอมพล<br />เขตจตุจักร กรุงเทพมหานคร 10900</address>
+          <p>ตรงข้าม Union Mall · เปิดบริการทุกวัน 11:00–20:00 น.</p>
+          <a
+            className="button"
+            href="https://www.google.com/maps/search/?api=1&query=The+Wonder+Clinic+150+Lat+Phrao+4+Bangkok"
+            target="_blank"
+            rel="noreferrer"
+          >
+            เปิดเส้นทางใน Google Maps <span>↗</span>
+          </a>
+        </div>
+        <div className="location-map">
+          <iframe
+            title="แผนที่ The Wonder Clinic สาขาลาดพร้าว"
+            src="https://maps.google.com/maps?q=The%20Wonder%20Clinic%20150%20Lat%20Phrao%204%20Bangkok&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+      </section>
+
+      <SiteFooter />
     </main>
   );
 }
