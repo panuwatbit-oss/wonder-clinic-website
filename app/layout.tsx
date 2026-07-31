@@ -1,6 +1,20 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
+import { Cormorant_Garamond, Noto_Sans_Thai } from "next/font/google";
 import "./globals.css";
+
+const thaiSans = Noto_Sans_Thai({
+  variable: "--font-thai-sans",
+  subsets: ["thai", "latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const displaySerif = Cormorant_Garamond({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+});
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
@@ -20,5 +34,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="th"><body>{children}</body></html>;
+  return <html lang="th"><body className={`${thaiSans.variable} ${displaySerif.variable}`}>{children}</body></html>;
 }
