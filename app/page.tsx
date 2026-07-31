@@ -1,3 +1,5 @@
+import { BeforeAfterSlider } from "./components/BeforeAfterSlider";
+
 const services = [
   {
     number: "01",
@@ -99,7 +101,7 @@ export default function Home() {
           {services.map((service) => (
             <article className="service-card" key={service.number}>
               <div className="service-top"><span>{service.number}</span><span>{service.tag}</span></div>
-              <div><span className={`decor-icon ${service.icon}`} aria-hidden="true" /><h3>{service.title}</h3><p className="service-en">{service.en}</p><p>{service.description}</p></div>
+              <div><img className="decor-icon" src={`/media/icons/${service.icon}.png`} alt="" /><h3>{service.title}</h3><p className="service-en">{service.en}</p><p>{service.description}</p></div>
               <a href="#booking" aria-label={`สอบถาม ${service.title}`}>สอบถามโปรแกรม <span>↗</span></a>
             </article>
           ))}
@@ -142,7 +144,7 @@ export default function Home() {
 
       <section className="results section">
         <div className="results-copy"><p className="eyebrow">RESULTS &amp; REVIEWS</p><h2>ผลลัพธ์ที่ดี<br /><em>เริ่มจากแผนที่เหมาะสม</em></h2><p>พื้นที่นี้เตรียมไว้สำหรับรีวิวและภาพก่อน–หลังจากลูกค้าจริง โดยต้องได้รับความยินยอมก่อนเผยแพร่ทุกครั้ง</p><a className="text-link" href="#booking">ปรึกษาแนวทางที่เหมาะกับคุณ <span>↗</span></a></div>
-        <figure className="results-mockup"><img src="/media/mockups/before-after-layout-mockup.png" alt="Mockup สำหรับวางภาพก่อนและหลัง" /><figcaption><span>BEFORE · MOCKUP</span><span>AFTER · MOCKUP</span></figcaption><p>ภาพตัวอย่างสำหรับจัดวางเท่านั้น ไม่ใช่ผลลัพธ์จริงของผู้รับบริการ</p></figure>
+        <figure className="results-mockup"><BeforeAfterSlider /><figcaption><span>BEFORE · MOCKUP</span><span>AFTER · MOCKUP</span></figcaption><p>ภาพตัวอย่างสำหรับจัดวางเท่านั้น ไม่ใช่ผลลัพธ์จริงของผู้รับบริการ</p></figure>
       </section>
 
       <section className="programs section" id="programs">
