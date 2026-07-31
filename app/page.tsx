@@ -97,9 +97,11 @@ export default function Home() {
           {services.map((service) => (
             <article className="service-card" key={service.number}>
               <div className="service-top"><span>{service.number}</span><span>{service.tag}</span></div>
-              <img className="service-cover" src={service.image} alt={`ภาพตัวอย่าง ${service.title}`} />
-              <div className="service-copy"><h3>{service.title}</h3><p className="service-en">{service.en}</p><p>{service.description}</p></div>
-              <a href={service.href} aria-label={`อ่านรายละเอียด ${service.title}`}>อ่านรายละเอียด <span>↗</span></a>
+              <a className="service-cover-link" href={service.href} aria-label={`ดูรายละเอียด ${service.title}`}>
+                <img className="service-cover" src={service.image} alt={`ภาพตัวอย่าง ${service.title}`} />
+              </a>
+              <div className="service-copy"><h3><a className="service-title-link" href={service.href}>{service.title}</a></h3><p className="service-en">{service.en}</p><p>{service.description}</p></div>
+              <a className="service-detail-link" href={service.href} aria-label={`อ่านรายละเอียด ${service.title}`}>อ่านรายละเอียด <span>↗</span></a>
             </article>
           ))}
         </div>
