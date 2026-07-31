@@ -7,7 +7,7 @@ const services = [
     en: "Clearer, more even-looking skin",
     description: "ดูแลปัญหาผิวหน้า ฝ้า รอยดำ และรอยแตกลาย ด้วยเลเซอร์พลังงานแม่นยำ",
     tag: "PICO LASER",
-    icon: "icon-skin",
+    image: "/media/services/discovery-pico-cover.png",
   },
   {
     number: "02",
@@ -15,7 +15,7 @@ const services = [
     en: "Smooth skin, made simple",
     description: "ดูแลได้ตั้งแต่ใบหน้า รักแร้ แขน ขา ลำตัว ไปจนถึง Bikini และ Brazilian",
     tag: "YAG HAIR REMOVAL",
-    icon: "icon-hair",
+    image: "/media/services/yag-hair-removal-cover.png",
   },
   {
     number: "03",
@@ -23,7 +23,7 @@ const services = [
     en: "Lift with technology",
     description: "ยกกระชับ กรอบหน้าชัด ลดความหย่อนคล้อย และดูแลริ้วรอยอย่างเหมาะกับแต่ละคน",
     tag: "FACIAL CONTOURING",
-    icon: "icon-contour",
+    image: "/media/services/facial-contour-cover.png",
   },
   {
     number: "04",
@@ -31,7 +31,28 @@ const services = [
     en: "Plan made for you",
     description: "Botox, Filler, Skin Booster และ Biostimulator พร้อมการประเมินโดยแพทย์",
     tag: "DOCTOR-LED INJECTABLES",
-    icon: "icon-care",
+    image: "/media/services/injectable-cover.png",
+  },
+];
+
+const resultCases = [
+  {
+    title: "Discovery Pico",
+    subtitle: "ตัวอย่างการจัดวางรีวิวผิว",
+    beforeSrc: "/media/mockups/before-mockup.png",
+    afterSrc: "/media/mockups/after-mockup.png",
+  },
+  {
+    title: "Facial Contouring",
+    subtitle: "ตัวอย่างการจัดวางรีวิวกรอบหน้า",
+    beforeSrc: "/media/mockups/contour-before-mockup.png",
+    afterSrc: "/media/mockups/contour-after-mockup.png",
+  },
+  {
+    title: "YAG Hair Removal",
+    subtitle: "ตัวอย่างการจัดวางรีวิวกำจัดขน",
+    beforeSrc: "/media/mockups/yag-before-mockup.png",
+    afterSrc: "/media/mockups/yag-after-mockup.png",
   },
 ];
 
@@ -101,7 +122,8 @@ export default function Home() {
           {services.map((service) => (
             <article className="service-card" key={service.number}>
               <div className="service-top"><span>{service.number}</span><span>{service.tag}</span></div>
-              <div><img className="decor-icon" src={`/media/icons/${service.icon}.png`} alt="" /><h3>{service.title}</h3><p className="service-en">{service.en}</p><p>{service.description}</p></div>
+              <img className="service-cover" src={service.image} alt={`ภาพตัวอย่าง ${service.title}`} />
+              <div className="service-copy"><h3>{service.title}</h3><p className="service-en">{service.en}</p><p>{service.description}</p></div>
               <a href="#booking" aria-label={`สอบถาม ${service.title}`}>สอบถามโปรแกรม <span>↗</span></a>
             </article>
           ))}
@@ -143,8 +165,22 @@ export default function Home() {
       </section>
 
       <section className="results section">
-        <div className="results-copy"><p className="eyebrow">RESULTS &amp; REVIEWS</p><h2>ผลลัพธ์ที่ดี<br /><em>เริ่มจากแผนที่เหมาะสม</em></h2><p>พื้นที่นี้เตรียมไว้สำหรับรีวิวและภาพก่อน–หลังจากลูกค้าจริง โดยต้องได้รับความยินยอมก่อนเผยแพร่ทุกครั้ง</p><a className="text-link" href="#booking">ปรึกษาแนวทางที่เหมาะกับคุณ <span>↗</span></a></div>
-        <figure className="results-mockup"><BeforeAfterSlider /><figcaption><span>BEFORE · MOCKUP</span><span>AFTER · MOCKUP</span></figcaption><p>ภาพตัวอย่างสำหรับจัดวางเท่านั้น ไม่ใช่ผลลัพธ์จริงของผู้รับบริการ</p></figure>
+        <div className="results-copy">
+          <div><p className="eyebrow">RESULTS &amp; REVIEWS</p><h2>ผลลัพธ์ที่ดี<br /><em>เริ่มจากแผนที่เหมาะสม</em></h2></div>
+          <div><p>พื้นที่นี้เตรียมไว้สำหรับรีวิวและภาพก่อน–หลังจากลูกค้าจริง โดยต้องได้รับความยินยอมก่อนเผยแพร่ทุกครั้ง</p><a className="text-link" href="#booking">ปรึกษาแนวทางที่เหมาะกับคุณ <span>↗</span></a></div>
+        </div>
+        <div className="results-grid">
+          {resultCases.map((result) => (
+            <article className="result-case" key={result.title}>
+              <figure className="results-mockup">
+                <BeforeAfterSlider beforeSrc={result.beforeSrc} afterSrc={result.afterSrc} label={result.title} />
+                <figcaption><span>BEFORE · MOCKUP</span><span>AFTER · MOCKUP</span></figcaption>
+              </figure>
+              <div className="result-meta"><span>MOCKUP CASE</span><h3>{result.title}</h3><p>{result.subtitle}</p></div>
+            </article>
+          ))}
+        </div>
+        <p className="results-disclaimer">ภาพทั้งหมดในส่วนนี้เป็น Mockup เพื่อแสดงรูปแบบเว็บไซต์เท่านั้น ไม่ใช่ผลลัพธ์จริงของผู้รับบริการ</p>
       </section>
 
       <section className="programs section" id="programs">
