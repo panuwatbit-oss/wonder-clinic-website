@@ -17,7 +17,7 @@ const services = [
   },
   {
     number: "02",
-    title: "Quanta Light EVO",
+    title: "Quanta YAG Laser",
     en: "Smooth skin, made simple",
     description: "Long-pulsed Nd:YAG 1064 nm จาก Quanta System ทำงานร่วมกับระบบลมเย็น Cryo 6",
     tag: "YAG HAIR REMOVAL",
@@ -75,7 +75,7 @@ export default function Home() {
           <img
             className="hero-photo hero-photo-machines"
             src="/media/generated/home-machines-hero.webp"
-            alt="Discovery Pico พร้อม Quanta Light EVO, Oligio, Ultraformer III และ Ultherapy"
+            alt="Discovery Pico พร้อม Quanta YAG Laser, Oligio, Ultraformer III และ Ultherapy"
           />
         </div>
       </section>

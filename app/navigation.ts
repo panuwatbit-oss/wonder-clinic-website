@@ -21,7 +21,7 @@ export const siteNavigation: NavigationItem[] = [
         ],
       },
       {
-        label: "Quanta Light EVO กำจัดขน",
+        label: "Quanta YAG Laser กำจัดขน",
         href: "/services/yag-hair-removal",
         children: [
           { label: "ใบหน้า หนวด และเครา", href: "/services/yag-hair-removal#yag-face" },
