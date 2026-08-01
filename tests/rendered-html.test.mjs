@@ -142,6 +142,7 @@ test("keeps the complete review library and responsive gallery wired into the si
   assert.match(css, /grid-template-columns:repeat\(4,1fr\)/);
   assert.match(css, /scroll-snap-type:x mandatory/);
   assert.match(css, /object-fit:contain/);
+  assert.match(css, /object-position:center 20%/);
   assert.match(css, /calc\(100vw - 56px\)/);
   assert.match(css, /\.feature-yag \.button \{ position:relative; z-index:2; \}/);
   assert.match(css, /desktop-nav-dropdown/);
