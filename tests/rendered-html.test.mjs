@@ -64,6 +64,10 @@ test("uses the approved WebP hero image on every primary page", async () => {
     const source = await readFile(new URL(`../app/${name}/page.tsx`, import.meta.url), "utf8");
     assert.match(source, new RegExp(image.replaceAll("/", "\\/").replace(".", "\\.")));
   }
+
+  const aboutSource = await readFile(new URL("../app/about/page.tsx", import.meta.url), "utf8");
+  await access(new URL("../public/media/clinic/wonder-clinic-exterior.webp", import.meta.url));
+  assert.match(aboutSource, /\/media\/clinic\/wonder-clinic-exterior\.webp/);
 });
 
 test("server-renders every detailed service page with FAQ and booking actions", async () => {
