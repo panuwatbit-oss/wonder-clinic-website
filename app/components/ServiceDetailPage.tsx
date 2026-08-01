@@ -4,6 +4,7 @@ import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 
 export function ServiceDetailPage({ service }: { service: ServiceDetail }) {
+  const isInjectableDetail = ["botox", "filler", "skin-booster", "biostimulator"].includes(service.slug);
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -20,7 +21,7 @@ export function ServiceDetailPage({ service }: { service: ServiceDetail }) {
 
     <section className="service-detail-hero">
       <div className="service-detail-hero-copy">
-        <nav className="breadcrumb" aria-label="Breadcrumb"><a href="/">หน้าแรก</a><span>›</span><a href="/services">บริการ</a><span>›</span><span>{service.title}</span></nav>
+        <nav className="breadcrumb" aria-label="Breadcrumb"><a href="/">หน้าแรก</a><span>›</span><a href="/services">บริการ</a>{isInjectableDetail && <><span>›</span><a href="/services/injectables">โปรแกรมฉีดโดยแพทย์</a></>}<span>›</span><span>{service.title}</span></nav>
         <p className="eyebrow">{service.eyebrow}</p>
         <h1>{service.title}<br /><em>{service.highlight}</em></h1>
         <p>{service.summary}</p>

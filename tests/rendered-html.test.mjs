@@ -39,6 +39,7 @@ test("server-renders every primary sitemap page", async () => {
     ["/articles", "WONDER JOURNAL"],
     ["/about", "ABOUT THE WONDER CLINIC"],
     ["/contact", "CONTACT &amp; BOOKING"],
+    ["/services/injectables", "เลือกอ่านตามโปรแกรม"],
   ];
 
   for (const [path, content] of routes) {
@@ -65,7 +66,10 @@ test("server-renders every detailed service page with FAQ and booking actions", 
     ["/services/oligio", "Oligio", "review-017"],
     ["/services/ultraformer-iii", "Ultraformer III", "review-022"],
     ["/services/ultherapy", "Ultherapy", "review-003"],
-    ["/services/injectables", "โปรแกรมฉีดโดยแพทย์", "review-107"],
+    ["/services/injectables/botox", "Botox / Botulinum Toxin", "review-067"],
+    ["/services/injectables/filler", "Filler", "review-029"],
+    ["/services/injectables/skin-booster", "Skin Booster", "review-004"],
+    ["/services/injectables/biostimulator", "Biostimulator", "review-004"],
   ];
 
   for (const [path, content, reviewAsset] of routes) {
@@ -128,6 +132,10 @@ test("keeps the complete review library and responsive gallery wired into the si
   assert.match(css, /mobile-nav-group/);
   assert.match(layout, /Noto_Sans_Thai/);
   assert.match(navigation, /โปรโมชั่นประจำเดือน/);
+  assert.match(navigation, /\/services\/injectables\/botox/);
+  assert.match(navigation, /\/services\/injectables\/filler/);
+  assert.match(navigation, /\/services\/injectables\/skin-booster/);
+  assert.match(navigation, /\/services\/injectables\/biostimulator/);
   assert.match(navigation, /การเตรียมตัวก่อนทำ/);
   assert.doesNotMatch(navigation, /เรื่องราวของ Wonder Clinic/);
   assert.doesNotMatch(navigation, /จองคิวออนไลน์/);
