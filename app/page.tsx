@@ -13,6 +13,7 @@ const services = [
     tag: "PICO LASER",
     image: "/media/services/discovery-pico-cover.webp",
     href: "/services/discovery-pico",
+    prices: [{ price: "1,990 บาท", detail: "ราคาเริ่มต้น" }],
   },
   {
     number: "02",
@@ -22,6 +23,7 @@ const services = [
     tag: "YAG HAIR REMOVAL",
     image: "/media/services/yag-hair-removal-cover.webp",
     href: "/services/yag-hair-removal",
+    prices: [{ price: "2,990 บาท", detail: "12 ครั้ง / ปี" }],
   },
   {
     number: "03",
@@ -31,6 +33,10 @@ const services = [
     tag: "FACIAL CONTOURING",
     image: "/media/services/facial-contour-cover.webp",
     href: "/services#facial-contouring",
+    prices: [
+      { price: "2,990 บาท", detail: "Oligio & Ultraformer III · 100 shots" },
+      { price: "9,990 บาท", detail: "Ultherapy · 100 shots" },
+    ],
   },
   {
     number: "04",
@@ -40,6 +46,7 @@ const services = [
     tag: "DOCTOR-LED INJECTABLES",
     image: "/media/services/injectable-cover.webp",
     href: "/services/injectables",
+    prices: [],
   },
 ];
 
@@ -101,7 +108,7 @@ export default function Home() {
               <a className="service-cover-link" href={service.href} aria-label={`ดูรายละเอียด ${service.title}`}>
                 <img className="service-cover" src={service.image} alt={`ภาพตัวอย่าง ${service.title}`} />
               </a>
-              <div className="service-copy"><h3><a className="service-title-link" href={service.href}>{service.title}</a></h3><p className="service-en">{service.en}</p><p>{service.description}</p></div>
+              <div className="service-copy"><h3><a className="service-title-link" href={service.href}>{service.title}</a></h3><p className="service-en">{service.en}</p>{service.prices.length > 0 && <div className="service-prices" aria-label={`ราคาเริ่มต้น ${service.title}`}>{service.prices.map((item) => <p key={`${item.price}-${item.detail}`}><span>เริ่ม</span><strong>{item.price}</strong><small>{item.detail}</small></p>)}</div>}<p>{service.description}</p></div>
               <a className="service-detail-link" href={service.href} aria-label={`อ่านรายละเอียด ${service.title}`}>อ่านรายละเอียด <span>↗</span></a>
             </article>
           ))}

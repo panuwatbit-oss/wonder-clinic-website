@@ -26,6 +26,11 @@ export function ServiceDetailPage({ service }: { service: ServiceDetail }) {
         <h1>{service.title}<br /><em>{service.highlight}</em></h1>
         <p>{service.summary}</p>
         <div className="service-badges">{service.badges.map((badge) => <span key={badge}>{badge}</span>)}</div>
+        {service.pricing && service.pricing.length > 0 && <div className="service-detail-pricing" aria-label={`ราคาเริ่มต้น ${service.title}`}>
+          <span>STARTING PRICE · ราคาเริ่มต้น</span>
+          {service.pricing.map((item) => <div key={`${item.price}-${item.detail}`}><strong>{item.price}</strong><p>{item.detail}</p></div>)}
+          <small>ราคาและจำนวนครั้งอาจเปลี่ยนแปลงตามโปรโมชั่นและการประเมิน กรุณาสอบถามคลินิกก่อนรับบริการ</small>
+        </div>}
         <div className="service-detail-actions"><a className="button" href="/contact">ปรึกษาโปรแกรม <span>↗</span></a><a className="text-link" href="#details">ดูรายละเอียด <span>↓</span></a></div>
       </div>
       <div className={`service-detail-hero-visual${service.imageSource ? " machine-hero-visual" : ""}`}>

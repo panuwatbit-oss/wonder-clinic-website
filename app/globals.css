@@ -92,6 +92,17 @@ body { font-size:16px; line-height:1.6; }
 .service-card p { font-size:14px; line-height:1.75; }
 .service-card .service-en,.video-grid article>p { font-size:11px; line-height:1.5; }
 .service-detail-link,.promo-grid a,.article-grid a { font-size:14px; }
+.service-prices { display:grid; gap:7px; margin:15px 0 13px; }
+.service-prices p { display:grid; grid-template-columns:auto 1fr; align-items:baseline; gap:4px 7px; margin:0; padding:10px 11px; border-left:3px solid var(--yellow); background:#29251f; color:#fffdf7; line-height:1.35; }
+.service-prices span { color:#f2cc35; font-size:11px; font-weight:800; }
+.service-prices strong { color:#fffdf7; font-size:20px; font-weight:700; letter-spacing:-.02em; }
+.service-prices small { grid-column:1/-1; color:#c8c0b3; font-size:11px; line-height:1.45; }
+.service-detail-pricing { width:min(100%,560px); margin-top:26px; padding:20px 22px; border:1px solid #d7c47c; background:#fff8d9; box-shadow:0 12px 30px rgba(95,72,0,.08); }
+.service-detail-pricing>span { display:block; margin-bottom:7px; color:#8b6900; font-size:11px; font-weight:800; letter-spacing:.1em; }
+.service-detail-pricing>div { display:flex; align-items:baseline; flex-wrap:wrap; gap:8px 14px; }
+.service-detail-pricing strong { color:#1d1a15; font-size:clamp(29px,3vw,42px); line-height:1.15; letter-spacing:-.04em; }
+.service-detail-pricing p { margin:0; color:#62594a; font-size:14px; font-weight:700; }
+.service-detail-pricing small { display:block; margin-top:10px; color:#746b5d; font-size:11px; line-height:1.55; }
 .video-grid h3 { font-size:18px; }
 .results-mockup figcaption,.result-meta span,.review-gallery-overlay small,.review-lightbox figcaption span { font-size:11px; }
 .result-meta p,.results-disclaimer,.review-library-note { font-size:13px; line-height:1.7; }
@@ -117,6 +128,8 @@ body { font-size:16px; line-height:1.6; }
   .button-small { font-size:14px; }
   .hero-description,.page-hero-copy>p:last-child,.service-detail-hero-copy>p:not(.eyebrow) { font-size:16px; line-height:1.8; }
   .service-card p { font-size:15px; }
+  .service-prices small { font-size:12px; }
+  .service-detail-pricing { padding:18px; }
   .review-gallery-overlay { min-height:108px; }
   .site-footer nav a { min-height:38px; display:flex; align-items:center; }
 }

@@ -13,6 +13,7 @@ export type ServiceDetail = {
   machineAlt: string;
   imageSource?: { label: string; url: string };
   badges: string[];
+  pricing?: { price: string; detail: string }[];
   facts: { label: string; value: string; detail: string }[];
   overview: string[];
   suitableFor: string[];
@@ -63,6 +64,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     machineAlt: "เครื่อง Discovery PICO จาก Quanta System",
     imageSource: { label: "ภาพผลิตภัณฑ์จาก Quanta System", url: "https://www.quantasystem.com/us/laser/discovery-pico-series/" },
     badges: ["PICOSECOND ND:YAG", "532 · 1064 NM", "US FDA-CLEARED FAMILY"],
+    pricing: [{ price: "1,990 บาท", detail: "ราคาเริ่มต้นของโปรแกรม Discovery PICO" }],
     facts: [
       { label: "ผู้ผลิต", value: "Quanta System", detail: "บริษัทเทคโนโลยีเลเซอร์จากประเทศอิตาลี" },
       { label: "หลักการ", value: "Photoacoustic Effect", detail: "ส่งพลังงานช่วงสั้นมากเพื่อลดความร้อนสะสมรอบบริเวณเป้าหมาย" },
@@ -103,6 +105,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     machineAlt: "เครื่องเลเซอร์ Quanta Light EVO จาก Quanta System",
     imageSource: { label: "ภาพผลิตภัณฑ์จาก Quanta System", url: "https://www.quantasystem.com/laser/light-series/" },
     badges: ["QUANTA LIGHT EVO", "ND:YAG 1064 NM", "CRYO 6 COOLING"],
+    pricing: [{ price: "2,990 บาท", detail: "แพ็กเกจ 12 ครั้ง / ปี" }],
     facts: [
       { label: "เครื่องเลเซอร์", value: "Light EVO", detail: "แพลตฟอร์มเลเซอร์จาก Quanta System ประเทศอิตาลี" },
       { label: "เป้าหมาย", value: "Hair Follicle", detail: "พลังงานถูกดูดซับโดยเม็ดสีในเส้นขนและส่งลงสู่รากขน" },
@@ -143,6 +146,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     machineAlt: "เครื่อง Oligio จาก WONTECH",
     imageSource: { label: "ภาพประชาสัมพันธ์จาก WONTECH ASIA", url: "https://wontech-asia.com/products/oligilo" },
     badges: ["MONOPOLAR RF", "6.78 MHZ", "W-SIM"],
+    pricing: [{ price: "2,990 บาท", detail: "ราคาเริ่มต้น 100 shots" }],
     facts: [
       { label: "ผู้ผลิต", value: "WONTECH", detail: "บริษัทเทคโนโลยีความงามจากประเทศเกาหลีใต้" },
       { label: "พลังงาน", value: "Monopolar RF", detail: "สร้างความร้อนในชั้นผิวเพื่อกระตุ้นการปรับตัวของคอลลาเจน" },
@@ -182,6 +186,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     machineAlt: "เครื่อง Ultraformer III จาก CLASSYS",
     imageSource: { label: "ภาพผลิตภัณฑ์จาก CLASSYS", url: "https://classys.com/product/ultraformer-lll/" },
     badges: ["MMFU", "MULTI-DEPTH", "CLASSYS"],
+    pricing: [{ price: "2,990 บาท", detail: "ราคาเริ่มต้น 100 shots" }],
     facts: [
       { label: "ผู้ผลิต", value: "CLASSYS", detail: "ผู้ผลิตเครื่องมือความงามจากประเทศเกาหลีใต้" },
       { label: "พลังงาน", value: "Focused Ultrasound", detail: "รวมพลังงานอัลตราซาวด์เป็นจุดในระดับความลึกที่เลือก" },
@@ -221,6 +226,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     machineAlt: "ภาพระบบ Ultherapy จาก Merz Aesthetics",
     imageSource: { label: "ภาพแพลตฟอร์ม Ultherapy จาก Merz Aesthetics", url: "https://ultherapy.com/physicians-the-gold-standard" },
     badges: ["MFU-V", "REAL-TIME VISUALIZATION", "US FDA-CLEARED"],
+    pricing: [{ price: "9,990 บาท", detail: "ราคาเริ่มต้น 100 shots" }],
     facts: [
       { label: "เจ้าของเทคโนโลยี", value: "Ulthera · Merz", detail: "ระบบยกกระชับด้วยอัลตราซาวด์พร้อมภาพชั้นผิว" },
       { label: "จุดเด่น", value: "See Before Treat", detail: "แพทย์มองเห็นชั้นเนื้อเยื่อและวางพลังงานในระดับเป้าหมาย" },
