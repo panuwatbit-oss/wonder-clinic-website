@@ -1,4 +1,4 @@
-export function PageHero({ eyebrow, title, highlight, description, image }: { eyebrow: string; title: string; highlight: string; description: string; image?: string }) {
+export function PageHero({ eyebrow, title, highlight, description, image, imageClassName }: { eyebrow: string; title: string; highlight: string; description: string; image?: string; imageClassName?: string }) {
   return (
     <section className="page-hero">
       <div className="page-hero-copy">
@@ -6,7 +6,7 @@ export function PageHero({ eyebrow, title, highlight, description, image }: { ey
         <h1>{title}<br /><em>{highlight}</em></h1>
         <p>{description}</p>
       </div>
-      {image ? <img src={image} alt="" /> : <div className="page-hero-mark" aria-hidden="true">W</div>}
+      {image ? <img className={imageClassName} src={image} alt="" /> : <div className="page-hero-mark" aria-hidden="true">W</div>}
     </section>
   );
 }

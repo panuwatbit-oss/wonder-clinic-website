@@ -123,3 +123,5 @@ body { font-size:16px; line-height:1.6; }
 
 .about-technology>img.clinic-exterior { object-position:center; }
 @media (max-width:900px) { .about-technology>img.clinic-exterior { height:auto; min-height:0; aspect-ratio:840/460; object-fit:cover; } }
+.page-hero>img.page-hero-clinic { object-position:center; }
+@media (max-width:900px) { .page-hero>img.page-hero-clinic { height:auto; min-height:0; aspect-ratio:840/460; object-fit:cover; } }

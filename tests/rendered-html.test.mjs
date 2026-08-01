@@ -56,7 +56,7 @@ test("uses the approved WebP hero image on every primary page", async () => {
     reviews: "/media/pages/reviews-hero.webp",
     articles: "/media/pages/articles-hero.webp",
     about: "/media/samples/hero-beauty-reference-v3.webp",
-    contact: "/media/pages/contact-hero.webp",
+    contact: "/media/clinic/wonder-clinic-exterior.webp",
   };
   await Promise.all(Object.values(heroImages).map((image) => access(new URL(`../public${image}`, import.meta.url))));
 
