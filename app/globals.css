@@ -97,6 +97,11 @@ body { font-size:16px; line-height:1.6; }
 .service-prices span { color:#f2cc35; font-size:11px; font-weight:800; }
 .service-prices strong { color:#fffdf7; font-size:20px; font-weight:700; letter-spacing:-.02em; }
 .service-prices small { grid-column:1/-1; color:#c8c0b3; font-size:11px; line-height:1.45; }
+.promo-prices { display:grid; gap:7px; margin-top:16px; }
+.promo-price { display:grid; grid-template-columns:auto 1fr; align-items:baseline; gap:3px 8px; padding:9px 11px; border-left:3px solid var(--yellow); background:#29251f; }
+.promo-price>span { color:#f2cc35; font-size:11px; font-weight:800; }
+.promo-price strong { color:#fffdf7; font-size:18px; font-weight:700; letter-spacing:-.02em; }
+.promo-price small { grid-column:1/-1; color:#c8c0b3; font-size:11px; line-height:1.45; }
 .service-detail-pricing { width:min(100%,560px); margin-top:26px; padding:20px 22px; border:1px solid #d7c47c; background:#fff8d9; box-shadow:0 12px 30px rgba(95,72,0,.08); }
 .service-detail-pricing>span { display:block; margin-bottom:7px; color:#8b6900; font-size:11px; font-weight:800; letter-spacing:.1em; }
 .service-detail-pricing>div { display:flex; align-items:baseline; flex-wrap:wrap; gap:8px 14px; }
@@ -129,6 +134,7 @@ body { font-size:16px; line-height:1.6; }
   .hero-description,.page-hero-copy>p:last-child,.service-detail-hero-copy>p:not(.eyebrow) { font-size:16px; line-height:1.8; }
   .service-card p { font-size:15px; }
   .service-prices small { font-size:12px; }
+  .promo-price small { font-size:12px; }
   .service-detail-pricing { padding:18px; }
   .review-gallery-overlay { min-height:108px; }
   .site-footer nav a { min-height:38px; display:flex; align-items:center; }
