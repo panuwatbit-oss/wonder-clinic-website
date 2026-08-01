@@ -65,7 +65,7 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-art" aria-label="บริการหลักของ The Wonder Clinic">
-          <img className="hero-photo" src="/media/samples/hero-beauty-sample.webp" alt="ภาพตัวอย่างแนวทาง Hero ของ The Wonder Clinic" />
+          <img className="hero-photo" src="/media/samples/hero-beauty-reference-v2.webp" alt="นางแบบในภาพฮีโร่ของ The Wonder Clinic" />
           <div className="hero-statement">
             <span>TECHNOLOGY</span>
             <strong>MEETS<br />CARE</strong>
