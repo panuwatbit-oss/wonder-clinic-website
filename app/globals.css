@@ -79,4 +79,44 @@ a { color: inherit; text-decoration: none; }
 .service-faq { display:grid; grid-template-columns:.75fr 1.25fr; gap:10%; background:#f4efe3; }.service-faq>div:first-child>p:last-child { max-width:430px; margin-top:30px; color:#7a746b; font-size:11px; line-height:1.7; }.service-faq details { border-top:1px solid #cfc6b7; }.service-faq details:last-child { border-bottom:1px solid #cfc6b7; }.service-faq summary { display:grid; grid-template-columns:38px 1fr 24px; gap:12px; align-items:center; padding:24px 0; cursor:pointer; font-size:16px; font-weight:700; list-style:none; }.service-faq summary::-webkit-details-marker { display:none; }.service-faq summary span { color:#9a7600; font-size:10px; }.service-faq summary i { font-size:20px; font-style:normal; font-weight:400; transition:transform .2s ease; }.service-faq details[open] summary i { transform:rotate(45deg); }.service-faq details p { margin:0 0 26px 50px; color:#625d55; font-size:14px; line-height:1.8; }.detail-cta-actions { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; }.detail-cta-actions a { min-width:180px; }.detail-cta-actions .outline-button { background:rgba(255,255,255,.52); }
 @media (max-width:900px) { .page-hero,.catalog-item,.about-story,.about-technology,.contact-location,.service-detail-hero,.service-overview,.service-faq { grid-template-columns:1fr; }.page-hero>img,.page-hero-mark { min-height:430px; }.catalog-item.is-reverse>img { order:0; }.promo-grid { grid-template-columns:1fr; }.article-grid { grid-template-columns:repeat(2,1fr); }.about-values,.contact-options { grid-template-columns:1fr; }.contact-options>a { min-height:210px; }.contact-options strong { margin-top:42px; }.site-footer { grid-template-columns:1fr; }.site-footer-meta { grid-column:1; }.service-detail-hero-copy { min-height:650px; }.service-detail-hero-visual { min-height:620px; }.service-facts { grid-template-columns:1fr; }.service-facts article { min-height:170px; }.service-facts strong { margin-top:34px; }.service-overview>div:last-child { padding-top:0; }.process-grid { grid-template-columns:repeat(2,1fr); }.care-section aside ul { grid-template-columns:repeat(2,1fr); }.service-faq { gap:45px; } }
 @media (max-width:760px) { .page-hero { min-height:0; }.page-hero-copy { padding:76px 28px; }.page-hero h1 { font-size:clamp(48px,14vw,62px); }.page-hero-copy>p:last-child { font-size:15px; }.page-hero>img,.page-hero-mark { min-height:360px; }.page-section,.page-cta { padding:78px 28px; }.page-heading { grid-template-columns:1fr; gap:24px; margin-bottom:42px; }.service-catalog { gap:72px; }.catalog-item { gap:28px; }.catalog-item ul { grid-template-columns:1fr; }.promo-grid article { grid-template-columns:1fr; }.promo-grid article>img { aspect-ratio:16/9; }.article-grid { grid-template-columns:1fr; }.about-values { padding-top:0; }.about-values article { min-height:230px; }.about-technology>img { min-height:400px; }.contact-location iframe { min-height:390px; }.site-footer nav { grid-template-columns:repeat(2,1fr); }.site-footer-meta { flex-direction:column; gap:7px; }.service-detail-hero-copy { min-height:0; padding:58px 28px 70px; }.breadcrumb { margin-bottom:42px; }.service-detail-hero h1 { font-size:clamp(44px,13.2vw,58px); }.service-detail-hero-copy>p:not(.eyebrow) { font-size:14px; }.service-detail-actions { align-items:flex-start; flex-direction:column; gap:18px; }.service-detail-hero-visual { min-height:500px; }.machine-hero-stage { inset:2%; }.machine-hero-image { width:98%; height:96%; }.service-facts article { padding:30px 28px; }.concern-layout { grid-template-columns:1fr; gap:35px; }.concern-list { grid-template-columns:1fr; }.concern-list article:nth-child(odd) { border-right:0; }.concern-list article:nth-child(even) { padding-left:0; }.area-panel { padding:28px; }.service-process { padding:78px 28px; }.process-grid { grid-template-columns:1fr; }.process-grid article { min-height:220px; }.process-grid h3 { margin-top:52px; }.care-section { grid-template-columns:1fr; padding:0; }.care-column { padding:42px 28px; }.care-section aside { grid-column:1; padding:38px 28px; }.care-section aside ul { grid-template-columns:1fr; gap:12px; }.service-review-grid,.service-review-grid.is-single { display:flex; gap:14px; margin-left:-28px; margin-right:-28px; padding:0 28px 12px; overflow-x:auto; scroll-snap-type:x mandatory; }.service-review-card { flex:0 0 min(calc(100vw - 56px),390px); scroll-snap-align:center; }.service-review-card>span { opacity:1; transform:none; }.service-faq details p { margin-left:0; }.detail-cta-actions { flex-direction:column; }.detail-cta-actions a { width:100%; } }
+
+/* Readability scale: keep supporting Thai text comfortably legible on every screen. */
+body { font-size:16px; line-height:1.6; }
+.eyebrow { font-size:12px; line-height:1.55; }
+.desktop-nav-dropdown-head>a,.desktop-nav-group>a { font-size:14px; line-height:1.55; }
+.desktop-nav-item>a span { font-size:12px; }
+.mobile-nav-children a,.mobile-nav-section .mobile-nav-subitem { font-size:14px; line-height:1.55; }
+.button,.outline-button,.text-link { font-size:15px; }
+.service-top { font-size:11px; line-height:1.45; }
+.service-card p { font-size:14px; line-height:1.75; }
+.service-card .service-en,.video-grid article>p { font-size:11px; line-height:1.5; }
+.service-detail-link,.promo-grid a,.article-grid a { font-size:14px; }
+.video-grid h3 { font-size:18px; }
+.results-mockup figcaption,.result-meta span,.review-gallery-overlay small,.review-lightbox figcaption span { font-size:11px; }
+.result-meta p,.results-disclaimer,.review-library-note { font-size:13px; line-height:1.7; }
+.review-filters button,.review-subfilters button { font-size:13px; }
+.review-filters>span,.review-gallery-overlay i { font-size:12px; }
+.review-gallery-overlay strong { font-size:20px; line-height:1.45; }
+.site-footer { font-size:14px; line-height:1.7; }
+.site-footer-meta { font-size:11px; line-height:1.55; }
+.catalog-item>div>span,.promo-grid article span,.article-grid article span,.about-values span,.contact-options span,.injectable-program-card>span { font-size:12px; line-height:1.5; }
+.catalog-item li,.injectable-program-card strong { font-size:14px; }
+.catalog-links a,.injectable-program-card li { font-size:13px; }
+.breadcrumb { font-size:12px; line-height:1.55; }
+.service-badges span,.service-facts span,.concern-list span,.process-grid span { font-size:11px; line-height:1.5; }
+.service-facts p,.process-grid p,.care-section aside li { font-size:14px; line-height:1.75; }
+.concern-list p,.area-panel>span { font-size:16px; line-height:1.65; }
+.care-column li,.service-faq details p { font-size:15px; line-height:1.8; }
+.service-review-card>span { font-size:12px; }
+.service-faq>div:first-child>p:last-child { font-size:13px; line-height:1.75; }
+.service-faq summary { font-size:17px; line-height:1.55; }
+.service-faq summary span { font-size:12px; }
+
+@media (max-width:760px) {
+  .button-small { font-size:14px; }
+  .hero-description,.page-hero-copy>p:last-child,.service-detail-hero-copy>p:not(.eyebrow) { font-size:16px; line-height:1.8; }
+  .service-card p { font-size:15px; }
+  .review-gallery-overlay { min-height:108px; }
+  .site-footer nav a { min-height:38px; display:flex; align-items:center; }
+}
 @media (max-width:760px) { .program-item { grid-template-columns:38px 1fr 20px; gap:10px; } }
