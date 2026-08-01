@@ -49,13 +49,20 @@ test("server-renders every primary sitemap page", async () => {
   }
 });
 
-test("uses a dedicated generated WebP hero image on every primary page", async () => {
-  const imageNames = ["services", "promotions", "reviews", "articles", "about", "contact"];
-  await Promise.all(imageNames.map((name) => access(new URL(`../public/media/pages/${name}-hero.webp`, import.meta.url))));
+test("uses the approved WebP hero image on every primary page", async () => {
+  const heroImages = {
+    services: "/media/pages/services-hero.webp",
+    promotions: "/media/pages/promotions-hero.webp",
+    reviews: "/media/pages/reviews-hero.webp",
+    articles: "/media/pages/articles-hero.webp",
+    about: "/media/samples/hero-beauty-reference-v3.webp",
+    contact: "/media/pages/contact-hero.webp",
+  };
+  await Promise.all(Object.values(heroImages).map((image) => access(new URL(`../public${image}`, import.meta.url))));
 
-  for (const name of imageNames) {
+  for (const [name, image] of Object.entries(heroImages)) {
     const source = await readFile(new URL(`../app/${name}/page.tsx`, import.meta.url), "utf8");
-    assert.match(source, new RegExp(`/media/pages/${name}-hero\\.webp`));
+    assert.match(source, new RegExp(image.replaceAll("/", "\\/").replace(".", "\\.")));
   }
 });
 
