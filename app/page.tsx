@@ -91,7 +91,10 @@ export default function Home() {
       <section className="services section" id="services">
         <div className="section-heading">
           <div><p className="eyebrow">OUR SERVICES</p><h2>4 โปรแกรมหลัก<br /><em>ที่ Wonder เลือกสรร</em></h2></div>
-          <p>เริ่มต้นจากการพูดคุย เพื่อเลือกแนวทางที่ตอบโจทย์คุณที่สุด</p>
+          <div className="section-heading-action">
+            <p>เริ่มต้นจากการพูดคุย เพื่อเลือกแนวทางที่ตอบโจทย์คุณที่สุด</p>
+            <a className="text-link" href="/services">ดูบริการทั้งหมด <span>↗</span></a>
+          </div>
         </div>
         <div className="service-grid">
           {services.map((service) => (

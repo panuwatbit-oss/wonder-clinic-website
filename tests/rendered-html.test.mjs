@@ -105,6 +105,7 @@ test("keeps the complete review library and responsive gallery wired into the si
   assert.match(page, /service-cover-link/);
   assert.match(page, /service-title-link/);
   assert.match(page, /service-detail-link/);
+  assert.match(page, /href="\/services">ดูบริการทั้งหมด/);
   assert.match(page, /รู้จัก YAG Hair Removal/);
   assert.match(page, /ผลลัพธ์ขึ้นอยู่กับสภาพผิว/);
   assert.match(page, /เปิดเส้นทางใน Google Maps/);
