@@ -114,7 +114,7 @@ test("keeps the complete review library and responsive gallery wired into the si
 
   assert.match(page, /reviewGalleryItems/);
   assert.match(page, /HeroPhrases/);
-  assert.match(page, /hero-beauty-reference-v2\.webp/);
+  assert.match(page, /hero-beauty-reference-v3\.webp/);
   assert.match(page, /service-cover-link/);
   assert.match(page, /service-title-link/);
   assert.match(page, /service-detail-link/);
