@@ -34,7 +34,7 @@ test("server-renders the Wonder Clinic review experience", async () => {
 test("server-renders every primary sitemap page", async () => {
   const routes = [
     ["/services", "เทคโนโลยีมาตรฐานสากล"],
-    ["/promotions", "โปรโมชั่นประจำเดือน"],
+    ["/promotions", "CURRENT HIGHLIGHTS"],
     ["/reviews", "ประสบการณ์จริง"],
     ["/articles", "WONDER JOURNAL"],
     ["/about", "ABOUT THE WONDER CLINIC"],
@@ -83,6 +83,18 @@ test("server-renders every detailed service page with FAQ and booking actions", 
     assert.doesNotMatch(html, /ภาพผลิตภัณฑ์จาก/, path);
     assert.match(html, new RegExp(reviewAsset), `${path} review mapping`);
   }
+
+  const picoHtml = await (await render("/services/discovery-pico")).text();
+  assert.match(picoHtml, /id="pico-face"/);
+  assert.match(picoHtml, /id="pico-melasma"/);
+  assert.match(picoHtml, /id="pico-dark-spots"/);
+  assert.match(picoHtml, /id="pico-stretch-marks"/);
+  const yagHtml = await (await render("/services/yag-hair-removal")).text();
+  assert.match(yagHtml, /id="yag-face"/);
+  assert.match(yagHtml, /id="yag-underarm"/);
+  assert.match(yagHtml, /id="yag-arms-legs"/);
+  assert.match(yagHtml, /id="yag-body"/);
+  assert.match(yagHtml, /id="yag-bikini-brazilian"/);
 });
 
 test("keeps official manufacturer WebP equipment imagery available", async () => {
@@ -107,6 +119,9 @@ test("keeps the complete review library and responsive gallery wired into the si
   assert.match(page, /service-title-link/);
   assert.match(page, /service-detail-link/);
   assert.match(page, /href="\/services">ดูบริการทั้งหมด/);
+  assert.match(page, /ดู 4 โปรแกรมหลัก/);
+  assert.match(page, /program-item/);
+  assert.match(page, /\/services#facial-contouring/);
   assert.match(page, /รู้จัก YAG Hair Removal/);
   assert.match(page, /ผลลัพธ์ขึ้นอยู่กับสภาพผิว/);
   assert.match(page, /เปิดเส้นทางใน Google Maps/);
@@ -133,7 +148,10 @@ test("keeps the complete review library and responsive gallery wired into the si
   assert.match(css, /service-review-card/);
   assert.match(css, /mobile-nav-group/);
   assert.match(layout, /Noto_Sans_Thai/);
-  assert.match(navigation, /โปรโมชั่นประจำเดือน/);
+  assert.doesNotMatch(navigation, /โปรโมชั่นประจำเดือน/);
+  assert.doesNotMatch(navigation, /รีวิว Discovery Pico/);
+  assert.match(navigation, /pico-melasma/);
+  assert.match(navigation, /yag-bikini-brazilian/);
   assert.match(navigation, /\/services\/injectables\/botox/);
   assert.match(navigation, /\/services\/injectables\/filler/);
   assert.match(navigation, /\/services\/injectables\/skin-booster/);

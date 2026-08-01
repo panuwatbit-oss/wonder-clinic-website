@@ -47,8 +47,8 @@ export function ServiceDetailPage({ service }: { service: ServiceDetail }) {
     <section className="page-section service-concerns">
       <div className="page-heading"><div><p className="eyebrow">WHO IT MAY SUIT</p><h2>เหมาะกับปัญหา<br /><em>และบริเวณใดบ้าง</em></h2></div><p>ความเหมาะสมจริงขึ้นอยู่กับการประเมินของแพทย์ สีผิว โครงสร้าง และประวัติสุขภาพของแต่ละคน</p></div>
       <div className="concern-layout">
-        <div className="concern-list">{service.suitableFor.map((item, index) => <article key={item}><span>{String(index + 1).padStart(2, "0")}</span><p>{item}</p></article>)}</div>
-        <div className="area-panel"><p className="eyebrow">TREATMENT AREAS</p>{service.areas.map((area) => <span key={area}>{area}</span>)}</div>
+        <div className="concern-list">{service.suitableFor.map((item, index) => <article id={service.anchorIds?.suitableFor?.[index]} key={item}><span>{String(index + 1).padStart(2, "0")}</span><p>{item}</p></article>)}</div>
+        <div className="area-panel"><p className="eyebrow">TREATMENT AREAS</p>{service.areas.map((area, index) => <span id={service.anchorIds?.areas?.[index]} key={area}>{area}</span>)}</div>
       </div>
     </section>
 

@@ -30,7 +30,7 @@ const services = [
     description: "รวม Oligio, Ultraformer III และ Ultherapy เพื่อเลือกพลังงานให้เหมาะกับแต่ละปัญหา",
     tag: "FACIAL CONTOURING",
     image: "/media/services/facial-contour-cover.webp",
-    href: "/services/oligio",
+    href: "/services#facial-contouring",
   },
   {
     number: "04",
@@ -44,10 +44,10 @@ const services = [
 ];
 
 const programs = [
-  ["DISCOVERY PICO", "ดูแลรอยดำ ฝ้า และผิวไม่เรียบเนียน"],
-  ["YAG HAIR REMOVAL", "สัมผัสผิวเรียบลื่นอย่างมั่นใจ"],
-  ["OLIGIO & ULTRAFORMER", "เทคโนโลยียกกระชับเพื่อกรอบหน้าที่ชัดขึ้น"],
-  ["INJECTABLE PROGRAM", "วางแผนการดูแลโดยแพทย์"],
+  { title: "DISCOVERY PICO", detail: "ดูแลรอยดำ ฝ้า และผิวไม่เรียบเนียน", href: "/services/discovery-pico" },
+  { title: "YAG HAIR REMOVAL", detail: "สัมผัสผิวเรียบลื่นอย่างมั่นใจ", href: "/services/yag-hair-removal" },
+  { title: "OLIGIO & ULTRAFORMER", detail: "เทคโนโลยียกกระชับเพื่อกรอบหน้าที่ชัดขึ้น", href: "/services#facial-contouring" },
+  { title: "INJECTABLE PROGRAM", detail: "วางแผนการดูแลโดยแพทย์", href: "/services/injectables" },
 ];
 
 export default function Home() {
@@ -61,7 +61,7 @@ export default function Home() {
           <HeroPhrases />
           <div className="hero-actions">
             <a className="button" href="#booking">ปรึกษาและจองคิว <span>↗</span></a>
-            <a className="text-link" href="#services">ดูบริการทั้งหมด <span>↓</span></a>
+            <a className="text-link" href="#services">ดู 4 โปรแกรมหลัก <span>↓</span></a>
           </div>
         </div>
         <div className="hero-art" aria-label="บริการหลักของ The Wonder Clinic">
@@ -157,7 +157,7 @@ export default function Home() {
         <p className="eyebrow">POPULAR PROGRAMS</p>
         <div className="programs-head"><h2>โปรแกรมที่หลายคน<br /><em>เลือกดูแลกับเรา</em></h2><a className="text-link" href="#booking">รับคำแนะนำจากทีมงาน <span>↗</span></a></div>
         <div className="program-list">
-          {programs.map(([title, detail], index) => <article key={title}><span>0{index + 1}</span><div><h3>{title}</h3><p>{detail}</p></div><span className="program-arrow">↗</span></article>)}
+          {programs.map((program, index) => <a className="program-item" href={program.href} key={program.title}><span>0{index + 1}</span><div><h3>{program.title}</h3><p>{program.detail}</p></div><span className="program-arrow">↗</span></a>)}
         </div>
       </section>
 
