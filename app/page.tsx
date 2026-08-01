@@ -64,14 +64,12 @@ export default function Home() {
             <a className="text-link" href="#services">ดู 4 โปรแกรมหลัก <span>↓</span></a>
           </div>
         </div>
-        <div className="hero-art" aria-label="บริการหลักของ The Wonder Clinic">
-          <img className="hero-photo" src="/media/samples/hero-beauty-reference-v3.webp" alt="นางแบบในภาพฮีโร่ของ The Wonder Clinic" />
-          <div className="hero-statement">
-            <span>TECHNOLOGY</span>
-            <strong>MEETS<br />CARE</strong>
-            <small>PICO · YAG · LIFT · INJECTABLES</small>
-          </div>
-          <div className="hero-badge">EST.<br />WONDER</div>
+        <div className="hero-art hero-art-machines" aria-label="เทคโนโลยีหลักของ The Wonder Clinic">
+          <img
+            className="hero-photo hero-photo-machines"
+            src="/media/generated/home-machines-hero.webp"
+            alt="Discovery Pico พร้อม Quanta Light EVO, Oligio, Ultraformer III และ Ultherapy"
+          />
         </div>
       </section>
 
