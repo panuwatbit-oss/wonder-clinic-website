@@ -1,6 +1,23 @@
 import { MobileMenu } from "./MobileMenu";
 import { siteNavigation } from "../navigation";
 
+const headerNavigation = [
+  siteNavigation.find((item) => item.label === "บริการ")!,
+  { label: "เทคโนโลยี", href: "/#standards" },
+  siteNavigation.find((item) => item.label === "รีวิว")!,
+  siteNavigation.find((item) => item.label === "โปรโมชั่น")!,
+  siteNavigation.find((item) => item.label === "บทความ")!,
+  { label: "ติดต่อ", href: "/contact" },
+];
+
+function CalendarIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24">
+      <path d="M7 3v3M17 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Z" />
+    </svg>
+  );
+}
+
 export function SiteHeader() {
   return (
     <header className="site-header">
@@ -8,7 +25,7 @@ export function SiteHeader() {
         <img src="/brand/logo/wonder-clinic-logo-ai-transparent-2048.webp" alt="The Wonder Clinic" />
       </a>
       <nav className="desktop-nav" aria-label="เมนูหลัก">
-        {siteNavigation.map((item) => (
+        {headerNavigation.map((item) => (
           <div className="desktop-nav-item" key={item.label}>
             <a href={item.href}>{item.label}{item.children ? <span aria-hidden="true">⌄</span> : null}</a>
             {item.children ? (
@@ -31,6 +48,7 @@ export function SiteHeader() {
         ))}
       </nav>
       <div className="header-actions">
+        <a className="header-consult-button" href="/#booking"><CalendarIcon />ปรึกษาแพทย์</a>
         <MobileMenu />
       </div>
     </header>

@@ -1,4 +1,3 @@
-import { HeroPhrases } from "./components/HeroPhrases";
 import { ReviewGallery } from "./components/ReviewGallery";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
@@ -57,27 +56,79 @@ const programs = [
   { title: "INJECTABLE PROGRAM", detail: "วางแผนการดูแลโดยแพทย์", href: "/services/injectables" },
 ];
 
+const heroServices = [
+  {
+    title: "DISCOVERY PICO",
+    detail: "เลเซอร์ดูแลรอยสิว ฝ้า กระ และจุดด่างดำ",
+    image: "/media/services/discovery-pico-cover.webp",
+    href: "/services/discovery-pico",
+  },
+  {
+    title: "QUANTA YAG LASER",
+    detail: "เลเซอร์กำจัดขน พร้อมระบบลมเย็น Cryo 6",
+    image: "/media/services/yag-hair-removal-cover.webp",
+    href: "/services/yag-hair-removal",
+  },
+  {
+    title: "OLIGIO & ULTHERAPY",
+    detail: "ยกกระชับและดูแลความหย่อนคล้อย",
+    image: "/media/services/facial-contour-cover.webp",
+    href: "/services#facial-contouring",
+  },
+  {
+    title: "โปรแกรมฉีดโดยแพทย์",
+    detail: "Botox · Filler · Skin Booster · Biostimulator",
+    image: "/media/services/injectable-cover.webp",
+    href: "/services/injectables",
+  },
+];
+
+function CalendarIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24">
+      <path d="M7 3v3M17 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Z" />
+    </svg>
+  );
+}
+
 export default function Home() {
   return (
     <main>
       <SiteHeader />
 
-      <section className="hero" id="top">
-        <div className="hero-copy">
+      <section className="home-hero" id="top">
+        <div className="home-hero-copy">
           <p className="eyebrow">THE WONDER CLINIC · LADPRAO SOI 4</p>
-          <HeroPhrases />
-          <div className="hero-actions">
-            <a className="button" href="#booking">ปรึกษาและจองคิว <span>↗</span></a>
-            <a className="text-link" href="#services">ดู 4 โปรแกรมหลัก <span>↓</span></a>
+          <h1>ความมั่นใจ เริ่มจาก<br /><em>การเลือกที่เหมาะกับคุณ</em></h1>
+          <p className="home-hero-description">เทคโนโลยีทางการแพทย์ที่คัดสรร<br />พร้อมการประเมินโดยแพทย์เฉพาะบุคคล</p>
+          <div className="home-hero-actions">
+            <a className="home-primary-action" href="#booking"><CalendarIcon />ปรึกษาและจองคิว <span>›</span></a>
+            <a className="home-secondary-action" href="/services">ดูโปรแกรมทั้งหมด <span>›</span></a>
           </div>
         </div>
-        <div className="hero-art hero-art-machines" aria-label="เทคโนโลยีหลักของ The Wonder Clinic">
-          <img
-            className="hero-photo hero-photo-machines"
-            src="/media/generated/home-machines-hero.webp"
-            alt="Discovery Pico พร้อม Quanta YAG Laser, Oligio, Ultraformer III และ Ultherapy"
-          />
+        <div className="home-hero-visual">
+          <img src="/media/samples/hero-beauty-reference-v2.webp" alt="ภาพตัวอย่างบรรยากาศความงามของ The Wonder Clinic" />
+          <div className="home-hero-glow" aria-hidden="true" />
         </div>
+      </section>
+
+      <section className="home-service-showcase" aria-label="บริการเด่นของ The Wonder Clinic">
+        {heroServices.map((service) => (
+          <a className="home-service-tile" href={service.href} key={service.title}>
+            <img src={service.image} alt={`ภาพ ${service.title}`} />
+            <div>
+              <h2>{service.title}</h2>
+              <p>{service.detail}</p>
+              <span aria-hidden="true">›</span>
+            </div>
+          </a>
+        ))}
+      </section>
+
+      <section className="home-trust-strip" aria-label="มาตรฐานการดูแลของ The Wonder Clinic">
+        <article><strong>01</strong><div><h2>เทคโนโลยีจากผู้ผลิตชั้นนำ</h2><p>เครื่องแท้และแหล่งที่มาตรวจสอบได้</p></div></article>
+        <article><strong>02</strong><div><h2>วางแผนโดยแพทย์</h2><p>ประเมินและดูแลอย่างใกล้ชิด</p></div></article>
+        <article><strong>03</strong><div><h2>ข้อมูลโปร่งใส</h2><p>แจ้งรายละเอียดก่อนรับบริการ</p></div></article>
       </section>
 
       <section className="intro section" id="about">
