@@ -3,51 +3,6 @@ import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
 import { reviewGalleryItems } from "./review-data";
 
-const services = [
-  {
-    number: "01",
-    title: "Discovery Pico",
-    en: "Clearer, more even-looking skin",
-    description: "Picosecond Laser จาก Quanta System ประเทศอิตาลี สำหรับวางแผนดูแลสีผิวและผิวไม่เรียบเนียน",
-    tag: "PICO LASER",
-    image: "/media/services/discovery-pico-cover.webp",
-    href: "/services/discovery-pico",
-    prices: [{ price: "1,990 บาท", detail: "ราคาเริ่มต้น" }],
-  },
-  {
-    number: "02",
-    title: "Quanta YAG Laser",
-    en: "Smooth skin, made simple",
-    description: "Long-pulsed Nd:YAG 1064 nm จาก Quanta System ทำงานร่วมกับระบบลมเย็น Cryo 6",
-    tag: "YAG HAIR REMOVAL",
-    image: "/media/services/yag-hair-removal-cover.webp",
-    href: "/services/yag-hair-removal",
-    prices: [{ price: "2,990 บาท", detail: "12 ครั้ง / ปี" }],
-  },
-  {
-    number: "03",
-    title: "ปรับรูปหน้าด้วยเลเซอร์",
-    en: "Lift with technology",
-    description: "รวม Oligio, Ultraformer III และ Ultherapy เพื่อเลือกพลังงานให้เหมาะกับแต่ละปัญหา",
-    tag: "FACIAL CONTOURING",
-    image: "/media/services/facial-contour-cover.webp",
-    href: "/services#facial-contouring",
-    prices: [
-      { price: "2,990 บาท", detail: "Oligio & Ultraformer III · 100 shots" },
-      { price: "9,990 บาท", detail: "Ultherapy · 100 shots" },
-    ],
-  },
-  {
-    number: "04",
-    title: "โปรแกรมฉีดโดยแพทย์",
-    en: "Plan made for you",
-    description: "Botox, Filler, Skin Booster และ Biostimulator พร้อมการประเมินโดยแพทย์",
-    tag: "DOCTOR-LED INJECTABLES",
-    image: "/media/services/injectable-cover.webp",
-    href: "/services/injectables",
-    prices: [],
-  },
-];
 
 const programs = [
   { title: "DISCOVERY PICO", detail: "ดูแลรอยดำ ฝ้า และผิวไม่เรียบเนียน", href: "/services/discovery-pico" },
@@ -99,7 +54,7 @@ export default function Home() {
       <section className="home-hero" id="top">
         <div className="home-hero-copy">
           <p className="eyebrow">THE WONDER CLINIC · LADPRAO SOI 4</p>
-          <h1>ความมั่นใจ เริ่มจาก<br /><em>การเลือกที่เหมาะกับคุณ</em></h1>
+          <h1><strong>ความมั่นใจ</strong> เริ่มจาก<br /><em>การเลือกที่เหมาะกับคุณ.</em></h1>
           <p className="home-hero-description">เทคโนโลยีทางการแพทย์ที่คัดสรร<br />พร้อมการประเมินโดยแพทย์เฉพาะบุคคล</p>
           <div className="home-hero-actions">
             <a className="home-primary-action" href="#booking"><CalendarIcon />ปรึกษาและจองคิว <span>›</span></a>
@@ -107,7 +62,7 @@ export default function Home() {
           </div>
         </div>
         <div className="home-hero-visual">
-          <img src="/media/samples/hero-beauty-reference-v2.webp" alt="ภาพตัวอย่างบรรยากาศความงามของ The Wonder Clinic" />
+          <img src="/media/samples/hero-beauty-reference-v4.png" alt="ภาพประกอบความงาม โทนครีมอบอุ่น" fetchPriority="high" />
           <div className="home-hero-glow" aria-hidden="true" />
         </div>
       </section>
@@ -141,28 +96,6 @@ export default function Home() {
           <article><b>01</b><h3>เทคโนโลยีจากผู้ผลิตชั้นนำ</h3><p>คัดสรรจาก Quanta System, WONTECH, CLASSYS, Merz Aesthetics และ Zimmer</p></article>
           <article><b>02</b><h3>มาตรฐานที่ตรวจสอบได้</h3><p>หลายเครื่องได้รับมาตรฐาน US FDA ตามรุ่นและข้อบ่งใช้ พร้อมข้อมูลแหล่งที่มาชัดเจน</p></article>
           <article><b>03</b><h3>เลือกให้เหมาะกับแต่ละบุคคล</h3><p>แพทย์ประเมินปัญหา สภาพผิว และเป้าหมายก่อนวางแผนการดูแล</p></article>
-        </div>
-      </section>
-
-      <section className="services section" id="services">
-        <div className="section-heading">
-          <div><p className="eyebrow">OUR SERVICES</p><h2>4 โปรแกรมหลัก<br /><em>ที่ Wonder เลือกสรร</em></h2></div>
-          <div className="section-heading-action">
-            <p>เริ่มต้นจากการพูดคุย เพื่อเลือกแนวทางที่ตอบโจทย์คุณที่สุด</p>
-            <a className="text-link" href="/services">ดูบริการทั้งหมด <span>↗</span></a>
-          </div>
-        </div>
-        <div className="service-grid">
-          {services.map((service) => (
-            <article className="service-card" key={service.number}>
-              <div className="service-top"><span>{service.number}</span><span>{service.tag}</span></div>
-              <a className="service-cover-link" href={service.href} aria-label={`ดูรายละเอียด ${service.title}`}>
-                <img className="service-cover" src={service.image} alt={`ภาพตัวอย่าง ${service.title}`} />
-              </a>
-              <div className="service-copy"><h3><a className="service-title-link" href={service.href}>{service.title}</a></h3><p className="service-en">{service.en}</p>{service.prices.length > 0 && <div className="service-prices" aria-label={`ราคาเริ่มต้น ${service.title}`}>{service.prices.map((item) => <p key={`${item.price}-${item.detail}`}><span>เริ่ม</span><strong>{item.price}</strong><small>{item.detail}</small></p>)}</div>}<p>{service.description}</p></div>
-              <a className="service-detail-link" href={service.href} aria-label={`อ่านรายละเอียด ${service.title}`}>อ่านรายละเอียด <span>↗</span></a>
-            </article>
-          ))}
         </div>
       </section>
 

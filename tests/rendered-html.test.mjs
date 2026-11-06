@@ -24,7 +24,7 @@ test("server-renders the Wonder Clinic review experience", async () => {
   assert.match(html, /REAL REVIEW LIBRARY/);
   assert.match(html, /รวมรีวิวจริง/);
   assert.match(html, /Discovery Pico/);
-  assert.match(html, /เทคโนโลยีชั้นนำ/);
+  assert.match(html, /เทคโนโลยีจากผู้ผลิตชั้นนำ/);
   assert.match(html, /แผนที่ The Wonder Clinic สาขาลาดพร้าว/);
   assert.match(html, /maps\.google\.com\/maps/);
   assert.doesNotMatch(html, /RESULTS &amp; REVIEWS/);
@@ -73,7 +73,7 @@ test("uses the approved WebP hero image on every primary page", async () => {
 test("server-renders every detailed service page with FAQ and booking actions", async () => {
   const routes = [
     ["/services/discovery-pico", "Discovery PICO", "review-031"],
-    ["/services/yag-hair-removal", "Quanta Light EVO", "review-037"],
+    ["/services/yag-hair-removal", "Quanta YAG Laser", "review-037"],
     ["/services/oligio", "Oligio", "review-017"],
     ["/services/ultraformer-iii", "Ultraformer III", "review-022"],
     ["/services/ultherapy", "Ultherapy", "review-003"],
@@ -124,13 +124,14 @@ test("keeps the complete review library and responsive gallery wired into the si
   ]);
 
   assert.match(page, /reviewGalleryItems/);
-  assert.match(page, /HeroPhrases/);
-  assert.match(page, /hero-beauty-reference-v3\.webp/);
-  assert.match(page, /service-cover-link/);
-  assert.match(page, /service-title-link/);
-  assert.match(page, /service-detail-link/);
-  assert.match(page, /href="\/services">ดูบริการทั้งหมด/);
-  assert.match(page, /ดู 4 โปรแกรมหลัก/);
+  assert.match(page, /home-hero-copy/);
+  assert.match(page, /hero-beauty-reference-v4\.png/);
+  await access(new URL("../public/media/samples/hero-beauty-reference-v4.png", import.meta.url));
+  assert.match(page, /home-service-showcase/);
+  assert.match(page, /home-service-tile/);
+  assert.match(page, /href=\{service.href\}/);
+  assert.match(page, /href="\/services">ดูโปรแกรมทั้งหมด/);
+  assert.doesNotMatch(page, /className="services section"|4 โปรแกรมหลัก/);
   assert.match(page, /program-item/);
   assert.match(page, /\/services#facial-contouring/);
   assert.match(page, /รู้จัก YAG Hair Removal/);

@@ -1,22 +1,31 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type ServiceReview = { src: string; alt: string };
 
 export function ServiceReviewGallery({ reviews }: { reviews: ServiceReview[] }) {
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
   const [activeReview, setActiveReview] = useState<ServiceReview | null>(null);
 
   useEffect(() => {
     if (!activeReview) return;
+    const previousFocus = document.activeElement as HTMLElement | null;
+    const previousOverflow = document.body.style.overflow;
+    closeButtonRef.current?.focus();
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") setActiveReview(null);
+      if (event.key === "Tab") {
+        event.preventDefault();
+        closeButtonRef.current?.focus();
+      }
     };
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", closeOnEscape);
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", closeOnEscape);
+      previousFocus?.focus();
     };
   }, [activeReview]);
 
@@ -33,7 +42,7 @@ export function ServiceReviewGallery({ reviews }: { reviews: ServiceReview[] }) 
 
       {activeReview && (
         <div className="review-lightbox" role="dialog" aria-modal="true" aria-label={activeReview.alt} onClick={() => setActiveReview(null)}>
-          <button className="review-lightbox-close" type="button" aria-label="ปิดภาพรีวิว" onClick={() => setActiveReview(null)}>×</button>
+          <button ref={closeButtonRef} className="review-lightbox-close" type="button" aria-label="ปิดภาพรีวิว" onClick={() => setActiveReview(null)}>×</button>
           <figure onClick={(event) => event.stopPropagation()}>
             <img src={activeReview.src} alt={activeReview.alt} />
             <figcaption><span>รีวิวที่เกี่ยวข้อง</span><strong>{activeReview.alt}</strong></figcaption>
